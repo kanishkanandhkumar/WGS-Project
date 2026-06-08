@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniVariant Cohort Analytics Suite</title>
+    <title>OmniVariant Analytics Engine</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
 
-    <header class="border-b border-slate-900 bg-slate-900/30 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <header class="border-b border-slate-900 bg-slate-900/40 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_#10b981]"></div>
+                <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
                 <div>
-                    <h1 class="text-xl font-black tracking-wider bg-gradient-to-r from-emerald-400 via-teal-400 to-indigo-400 bg-clip-text text-transparent">OMNIVARIANT <span class="text-slate-300 font-light tracking-normal text-sm">COHORT SUITE</span></h1>
-                    <p class="text-xs font-mono text-slate-500">Multi-Sample Next-Gen Sequencing Variant Harmonizer</p>
+                    <h1 class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">OMNIVARIANT <span class="text-slate-200 font-light tracking-normal text-base">ANALYTICS ENGINE</span></h1>
+                    <p class="text-xs font-mono text-slate-400">Zero-Latency WGS Pipeline Variant Analyzer</p>
                 </div>
             </div>
-            <div class="flex items-center gap-3">
-                <button id="reset-suite" class="hidden text-xs bg-slate-900 hover:bg-rose-950/30 hover:text-rose-400 border border-slate-800 hover:border-rose-500/20 px-3 py-1.5 rounded-lg font-mono transition-all">Clear Cohort Matrix</button>
-                <span class="text-xs bg-slate-900 text-slate-400 px-3 py-1.5 rounded-lg font-mono border border-slate-800">Status: Operational</span>
+            <div class="flex items-center gap-4">
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md font-mono border border-slate-700/60 shadow-inner">Architecture: Zero-Trust Local Isolation</span>
             </div>
         </div>
     </header>
@@ -28,376 +27,275 @@
     <main class="max-w-7xl mx-auto px-6 py-8 space-y-8">
         
         <section id="upload-section" class="max-w-3xl mx-auto transition-all duration-300">
-            <div id="dropzone" class="border-2 border-dashed border-slate-800 bg-slate-900/10 rounded-2xl p-16 text-center hover:border-indigo-500/50 hover:bg-slate-900/30 transition-all duration-300 group cursor-pointer relative shadow-2xl">
-                <input type="file" id="vcf-files" accept=".vcf" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
+            <div id="dropzone" class="border-2 border-dashed border-slate-800 bg-slate-900/20 rounded-2xl p-16 text-center hover:border-emerald-500/50 hover:bg-slate-900/40 transition-all duration-300 group cursor-pointer relative shadow-2xl">
+                <input type="file" id="vcf-file" accept=".vcf" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
                 <div class="space-y-4">
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl w-16 h-16 mx-auto flex items-center justify-center group-hover:scale-105 group-hover:border-indigo-500/30 transition-all">
-                        <svg class="w-8 h-8 text-indigo-400 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    <div class="p-5 bg-slate-900/80 rounded-xl w-16 h-16 mx-auto flex items-center justify-center group-hover:scale-110 group-hover:border-emerald-500/30 border border-slate-800 transition-all duration-300">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
                     </div>
                     <div>
-                        <p class="text-lg font-bold text-slate-200">Ingest NGS / WGS Variant Cohort</p>
-                        <p class="text-sm text-slate-400 mt-1 max-w-md mx-auto">Select or drag **multiple VCF files** simultaneously to execute comparative genomic cross-analysis inside local instance memory.</p>
+                        <p class="text-lg font-semibold text-slate-200">Ingest Annotated Next-Gen Sequencing Dataset</p>
+                        <p class="text-sm text-slate-400 mt-1 max-w-md mx-auto">Drop raw or functional annotated variants (.vcf) directly into the processing field. Data is memory-mapped securely inside this instance.</p>
+                    </div>
+                    <div class="pt-2">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 group-hover:text-emerald-400 group-hover:border-emerald-500/20 transition-all">
+                            Ready for parsing...
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div id="loading-state" class="hidden text-center py-20 bg-slate-900/20 rounded-2xl border border-slate-900 max-w-2xl mx-auto backdrop-blur-md">
-            <div class="relative w-14 h-14 mx-auto mb-6">
+        <div id="loading-state" class="hidden text-center py-24 bg-slate-900/20 rounded-2xl border border-slate-900 max-w-3xl mx-auto backdrop-blur-md">
+            <div class="relative w-16 h-16 mx-auto mb-6">
                 <div class="absolute inset-0 rounded-full border-4 border-slate-800"></div>
-                <div class="absolute inset-0 rounded-full border-4 border-t-indigo-500 border-r-emerald-400 animate-spin"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-t-emerald-400 border-r-teal-500 animate-spin"></div>
             </div>
-            <h3 class="text-base font-semibold text-slate-200 tracking-wide">Executing Parallel Sequence Parsing</h3>
-            <p id="loading-progress" class="text-slate-500 text-xs mt-1 font-mono">Mapping alignments...</p>
+            <h3 class="text-lg font-medium text-slate-200 tracking-wide">Executing Sequence Parse Matrix</h3>
+            <p class="text-slate-400 text-xs mt-2 font-mono">Streaming records • Extracting annotations • Compiling quality control metrics</p>
         </div>
 
-        <section id="dashboard-view" class="hidden grid grid-cols-1 lg:grid-cols-4 gap-8 animate-fade-in">
+        <section id="dashboard-view" class="hidden space-y-8 transition-opacity duration-500">
             
-            <div class="lg:col-span-1 space-y-4">
-                <div class="bg-slate-900/40 border border-slate-900 p-4 rounded-xl space-y-3">
-                    <h3 class="text-xs font-bold font-mono tracking-wider text-slate-400 uppercase">Dataset Navigation</h3>
-                    <div id="sample-navigation-list" class="space-y-1.5 max-h-[350px] overflow-y-auto pr-1">
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-slate-900/60 border border-slate-900/80 p-6 rounded-xl relative overflow-hidden group shadow-lg">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-white font-mono text-5xl font-bold">∑</div>
+                    <p class="text-xs font-mono uppercase tracking-widest text-slate-400">Total Variants Analyzed</p>
+                    <p id="metric-total" class="text-3xl font-extrabold mt-3 text-white tracking-tight">-</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-900/80 p-6 rounded-xl relative overflow-hidden group shadow-lg">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-emerald-400 font-mono text-5xl font-bold">S</div>
+                    <p class="text-xs font-mono uppercase tracking-widest text-slate-400">Single Nucleotide Variants</p>
+                    <p id="metric-snps" class="text-3xl font-extrabold mt-3 text-emerald-400 tracking-tight">-</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-900/80 p-6 rounded-xl relative overflow-hidden group shadow-lg">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-indigo-400 font-mono text-5xl font-bold">I</div>
+                    <p class="text-xs font-mono uppercase tracking-widest text-slate-400">Insertions / Deletions (Indels)</p>
+                    <p id="metric-indels" class="text-3xl font-extrabold mt-3 text-indigo-400 tracking-tight">-</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-900/80 p-6 rounded-xl relative overflow-hidden group shadow-lg border-l-2 border-l-amber-500/40">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 text-amber-500 font-mono text-5xl font-bold">!</div>
+                    <p class="text-xs font-mono uppercase tracking-widest text-amber-400 font-medium">Ti/Tv Quality Ratio</p>
+                    <p id="metric-titv" class="text-3xl font-extrabold mt-3 text-amber-400 tracking-tight">-</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-3 space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-900 lg:col-span-2 shadow-xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-sm font-semibold tracking-wider text-slate-300 uppercase font-mono">Chromosomal Mapping Frequency</h3>
+                        <span class="text-[10px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Bar Matrix</span>
+                    </div>
+                    <div class="h-64 relative">
+                        <canvas id="chrChart"></canvas>
+                    </div>
+                </div>
                 
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="bg-slate-900/50 border border-slate-900 p-5 rounded-xl shadow-lg relative overflow-hidden">
-                        <span class="text-[10px] font-mono text-slate-500 block uppercase tracking-wider">Total Variants</span>
-                        <p id="metric-total" class="text-2xl font-black mt-2 text-white font-mono">-</p>
+                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-900 shadow-xl">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-sm font-semibold tracking-wider text-slate-300 uppercase font-mono">Functional Impact Distribution</h3>
+                        <span class="text-[10px] font-mono bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20 font-medium">SnpEff/VEP Mapping</span>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-900 p-5 rounded-xl shadow-lg relative overflow-hidden">
-                        <span class="text-[10px] font-mono text-slate-500 block uppercase tracking-wider">SNVs</span>
-                        <p id="metric-snps" class="text-2xl font-black mt-2 text-emerald-400 font-mono">-</p>
+                    <div class="h-64 relative flex justify-center items-center">
+                        <canvas id="impactChart"></canvas>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-900 p-5 rounded-xl shadow-lg relative overflow-hidden">
-                        <span class="text-[10px] font-mono text-slate-500 block uppercase tracking-wider">Indels</span>
-                        <p id="metric-indels" class="text-2xl font-black mt-2 text-indigo-400 font-mono">-</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-900 shadow-xl lg:col-span-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-sm font-semibold tracking-wider text-slate-300 uppercase font-mono mb-4">Top Mutated Loci / Genes</h3>
+                        <div id="gene-ranking-container" class="space-y-3 font-mono text-xs">
+                            </div>
                     </div>
-                    <div class="bg-slate-900/50 border border-slate-900 p-5 rounded-xl shadow-lg relative overflow-hidden border-l-2 border-l-amber-500/30">
-                        <span class="text-[10px] font-mono text-amber-500 block uppercase tracking-wider">Ti/Tv Ratio</span>
-                        <p id="metric-titv" class="text-2xl font-black mt-2 text-amber-400 font-mono">-</p>
+                    <div class="pt-4 border-t border-slate-800/60 mt-4 text-[10px] text-slate-500 font-mono">
+                        Derived directly via structural sequence ANN vectors.
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-slate-900/40 p-5 rounded-xl border border-slate-900 md:col-span-2 shadow-xl">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 id="chart-primary-title" class="text-xs font-bold tracking-wider text-slate-300 uppercase font-mono">Chromosomal Mapping Frequency</h3>
-                            <span class="text-[9px] font-mono bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Dynamic Vector</span>
-                        </div>
-                        <div class="h-64 relative">
-                            <canvas id="primaryChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-900/40 p-5 rounded-xl border border-slate-900 shadow-xl">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xs font-bold tracking-wider text-slate-300 uppercase font-mono">Functional Consequence</h3>
-                            <span class="text-[9px] font-mono bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">SnpEff/VEP</span>
-                        </div>
-                        <div class="h-64 relative flex justify-center items-center">
-                            <canvas id="secondaryChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-900/40 p-5 rounded-xl border border-slate-900 lg:col-span-1 flex flex-col justify-between">
+                <div class="bg-slate-900/50 rounded-xl border border-slate-900 overflow-hidden lg:col-span-3 shadow-xl flex flex-col">
+                    <div class="px-6 py-4 border-b border-slate-900 bg-slate-900/30 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div>
-                            <h3 class="text-xs font-bold tracking-wider text-slate-300 uppercase font-mono mb-4">Top Impact Loci</h3>
-                            <div id="gene-ranking-container" class="space-y-2.5 font-mono text-[11px]">
-                                </div>
+                            <h3 class="text-sm font-semibold tracking-wider text-slate-200 uppercase font-mono">Genomic Sequence Record Explorer</h3>
+                            <p class="text-xs text-slate-400 font-mono mt-0.5">Real-time indexed filter matrix (Top 500 records)</p>
+                        </div>
+                        <div class="w-full sm:w-64 relative">
+                            <input type="text" id="table-search" placeholder="Filter by Chrom, Pos, or Ref/Alt..." class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2 rounded-lg text-slate-200 placeholder-slate-600 focus:outline-none focus:border-emerald-500/50 transition font-mono">
                         </div>
                     </div>
-
-                    <div class="bg-slate-900/40 rounded-xl border border-slate-900 overflow-hidden lg:col-span-3 flex flex-col">
-                        <div class="px-5 py-4 border-b border-slate-900/80 bg-slate-900/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-                            <div>
-                                <h3 id="table-title" class="text-xs font-bold tracking-wider text-slate-200 uppercase font-mono">Genomic Sequence Record Explorer</h3>
-                                <p class="text-[10px] text-slate-500 font-mono mt-0.5">Real-time mutation inspection array</p>
-                            </div>
-                            <div class="w-full sm:w-56">
-                                <input type="text" id="table-search" placeholder="Search position, allele..." class="w-full bg-slate-950 border border-slate-800 text-[11px] px-3 py-1.5 rounded-md text-slate-200 focus:outline-none focus:border-indigo-500/50 transition font-mono">
-                            </div>
-                        </div>
-                        <div class="overflow-x-auto max-h-[350px]">
-                            <table class="w-full text-left border-collapse text-[11px] font-mono text-slate-300">
-                                <thead class="bg-slate-950 text-slate-400 sticky top-0 border-b border-slate-900 z-10">
-                                    <tr>
-                                        <th class="p-3 uppercase tracking-wider">CHROM</th>
-                                        <th class="p-3 uppercase tracking-wider">POSITION</th>
-                                        <th class="p-3 uppercase tracking-wider">REF</th>
-                                        <th class="p-3 uppercase tracking-wider">ALT</th>
-                                        <th class="p-3 uppercase tracking-wider">QUAL</th>
-                                        <th class="p-3 uppercase tracking-wider">FILTER</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="variant-rows" class="divide-y divide-slate-900/30">
-                                    </tbody>
-                            </table>
-                        </div>
+                    <div class="overflow-x-auto max-h-[400px]">
+                        <table class="w-full text-left border-collapse text-xs text-slate-300 font-mono">
+                            <thead class="bg-slate-950 text-slate-400 sticky top-0 border-b border-slate-900 z-10 shadow-sm">
+                                <tr>
+                                    <th class="p-4 uppercase font-bold tracking-wider">CHROM</th>
+                                    <th class="p-4 uppercase font-bold tracking-wider">POSITION</th>
+                                    <th class="p-4 uppercase font-bold tracking-wider">REF ALLERLE</th>
+                                    <th class="p-4 uppercase font-bold tracking-wider">ALT ALLELE</th>
+                                    <th class="p-4 uppercase font-bold tracking-wider">QUAL VALUE</th>
+                                    <th class="p-4 uppercase font-bold tracking-wider">FILTER STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="variant-rows" class="divide-y divide-slate-900/40">
+                                </tbody>
+                        </table>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
 
     <script>
-        let cohortData = {
-            samples: {}, // Holds mapped metadata objects keyed by unique filenames
-            aggregated: {
-                totalVariants: 0, snps: 0, indels: 0, transitions: 0, transversions: 0,
-                chromosomes: {}, impacts: { HIGH: 0, MODERATE: 0, LOW: 0, MODIFIER: 0 }, geneMetrics: {}
-            }
-        };
-        let activeScopeId = "cohort_view_summary"; // Tracks loaded file scope reference
-        let activeCharts = {};
+        // Track global chart allocations to avoid Canvas rendering clashes
+        let charts = {};
+        let rawParsedVariants = []; // Store variants in memory scope for active searching
 
+        // Handle Drag & Drop styling micro-interactions
         const dropzone = document.getElementById('dropzone');
-        ['dragenter', 'dragover'].forEach(name => { dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.add('border-indigo-500', 'bg-slate-900/30'); }, false); });
-        ['dragleave', 'drop'].forEach(name => { dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.remove('border-indigo-500', 'bg-slate-900/30'); }, false); });
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, (e) => { e.preventDefault(); dropzone.classList.add('border-emerald-500/60', 'bg-slate-900/40'); }, false);
+        });
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, (e) => { e.preventDefault(); dropzone.classList.remove('border-emerald-500/60', 'bg-slate-900/40'); }, false);
+        });
 
-        document.getElementById('vcf-files').addEventListener('change', handleFileBatchSelection);
-        document.getElementById('reset-suite').addEventListener('click', clearSuiteState);
-
-        function handleFileBatchSelection(e) {
-            const files = Array.from(e.target.files);
-            if (files.length === 0) return;
+        document.getElementById('vcf-file').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
 
             document.getElementById('upload-section').classList.add('hidden');
             document.getElementById('loading-state').classList.remove('hidden');
-            
-            let parsedCount = 0;
-            
-            files.forEach(file => {
-                const reader = new FileReader();
-                document.getElementById('loading-progress').innerText = `Parsing sequence dataset: ${file.name}...`;
-                
-                reader.onload = function(evt) {
-                    executeSingleFilePipeline(file.name, evt.target.result);
-                    parsedCount++;
-                    
-                    if (parsedCount === files.length) {
-                        renderCohortDashboardWorkspace();
-                    }
-                };
-                reader.readAsText(file);
-            });
-        }
 
-        function executeSingleFilePipeline(filename, textContent) {
-            const lines = textContent.split('\n');
-            let sampleMetrics = {
-                totalVariants: 0, snps: 0, indels: 0, transitions: 0, transversions: 0,
-                chromosomes: {}, impacts: { HIGH: 0, MODERATE: 0, LOW: 0, MODIFIER: 0 },
-                geneMetrics: {}, rows: []
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                setTimeout(() => { // Introduce small intentional microtask delay for smooth interface lifecycle UI flow
+                    try {
+                        processVariantDataset(evt.target.result);
+                    } catch(err) {
+                        alert("Structural exception encountered during parsing. Please cross-verify VCF specification parameters.");
+                        console.error(err);
+                        document.getElementById('loading-state').classList.add('hidden');
+                        document.getElementById('upload-section').classList.remove('hidden');
+                    }
+                }, 400);
             };
+            reader.readAsText(file);
+        });
+
+        function processVariantDataset(vcfText) {
+            const lines = vcfText.split('\n');
+            
+            let totalVariants = 0;
+            let snps = 0;
+            let indels = 0;
+            
+            // Track Transition vs Transversion metrics (Crucial Quality metric for professional sequence variant runs)
+            let transitions = 0;
+            let transversions = 0;
+            
+            const chromosomes = {};
+            const impacts = { HIGH: 0, MODERATE: 0, LOW: 0, MODIFIER: 0 };
+            const geneMetrics = {};
+            rawParsedVariants = [];
 
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i].trim();
                 if (!line || line.startsWith('#')) continue;
 
-                sampleMetrics.totalVariants++;
-                cohortData.aggregated.totalVariants++;
+                totalVariants++;
+                const cols = line.split('\t');
+                if (cols.length < 8) continue;
 
-                const fields = line.split('\t');
-                if (fields.length < 8) continue;
+                const chrom = cols[0];
+                const pos = cols[1];
+                const id = cols[2];
+                const ref = cols[3].toUpperCase();
+                const alt = cols[4].toUpperCase();
+                const qual = cols[5];
+                const filter = cols[6];
+                const info = cols[7];
 
-                const chrom = fields[0];
-                const pos = fields[1];
-                const ref = fields[3].toUpperCase();
-                const alt = fields[4].toUpperCase();
-                const qual = fields[5];
-                const filter = fields[6];
-                const info = fields[7];
-
-                // Sequence Mutation Classification Vector
+                // Execute Mutation Classifications & Ti/Tv Computations
                 if (ref.length === 1 && alt.length === 1) {
-                    sampleMetrics.snps++;
-                    cohortData.aggregated.snps++;
+                    snps++;
+                    // Ti/Tv calculation check (A<->G or C<->T transitions, others are transversions)
                     if ((ref === 'A' && alt === 'G') || (ref === 'G' && alt === 'A') || 
                         (ref === 'C' && alt === 'T') || (ref === 'T' && alt === 'C')) {
-                        sampleMetrics.transitions++;
-                        cohortData.aggregated.transitions++;
+                        transitions++;
                     } else {
-                        sampleMetrics.transversions++;
-                        cohortData.aggregated.transversions++;
+                        transversions++;
                     }
                 } else {
-                    sampleMetrics.indels++;
-                    cohortData.aggregated.indels++;
+                    indels++;
                 }
 
-                // Chromosome frequency maps
-                sampleMetrics.chromosomes[chrom] = (sampleMetrics.chromosomes[chrom] || 0) + 1;
-                cohortData.aggregated.chromosomes[chrom] = (cohortData.aggregated.chromosomes[chrom] || 0) + 1;
+                chromosomes[chrom] = (chromosomes[chrom] || 0) + 1;
 
-                // Parse standard functional impact profiles
-                let isolatedImpact = null;
-                if (info.includes('HIGH')) { sampleMetrics.impacts.HIGH++; cohortData.aggregated.impacts.HIGH++; isolatedImpact = 'HIGH'; }
-                else if (info.includes('MODERATE')) { sampleMetrics.impacts.MODERATE++; cohortData.aggregated.impacts.MODERATE++; isolatedImpact = 'MODERATE'; }
-                else if (info.includes('LOW')) { sampleMetrics.impacts.LOW++; cohortData.aggregated.impacts.LOW++; isolatedImpact = 'LOW'; }
-                else if (info.includes('MODIFIER')) { sampleMetrics.impacts.MODIFIER++; cohortData.aggregated.impacts.MODIFIER++; isolatedImpact = 'MODIFIER'; }
+                // Track and quantify biological programmatic annotation profiles
+                if (info.includes('HIGH')) impacts.HIGH++;
+                else if (info.includes('MODERATE')) impacts.MODERATE++;
+                else if (info.includes('LOW')) impacts.LOW++;
+                else if (info.includes('MODIFIER')) impacts.MODIFIER++;
 
-                // Gene Symbol Extractions
+                // Isolate SnpEff/VEP structural Gene Symbol vectors out from the ANN payload matrix
                 if (info.includes('ANN=')) {
-                    const annSegment = info.split('ANN=')[1].split(';')[0];
-                    const fieldsANN = annSegment.split(',')[0].split('|');
-                    if (fieldsANN.length > 3 && fieldsANN[3]) {
-                        const geneSymbol = fieldsANN[3];
-                        sampleMetrics.geneMetrics[geneSymbol] = (sampleMetrics.geneMetrics[geneSymbol] || 0) + 1;
-                        cohortData.aggregated.geneMetrics[geneSymbol] = (cohortData.aggregated.geneMetrics[geneSymbol] || 0) + 1;
+                    const annData = info.split('ANN=')[1].split(';')[0];
+                    const functionalTerms = annData.split(',')[0].split('|');
+                    if (functionalTerms.length > 3 && functionalTerms[3]) {
+                        const symbol = functionalTerms[3];
+                        geneMetrics[symbol] = (geneMetrics[symbol] || 0) + 1;
                     }
                 }
 
-                if (sampleMetrics.rows.length < 500) {
-                    sampleMetrics.rows.push({ chrom, pos, ref, alt, qual, filter });
-                }
-            }
-            cohortData.samples[filename] = sampleMetrics;
-        }
-
-        function renderCohortDashboardWorkspace() {
-            document.getElementById('loading-state').classList.add('hidden');
-            document.getElementById('dashboard-view').classList.remove('hidden');
-            document.getElementById('reset-suite').classList.remove('hidden');
-
-            // Generate Nav Sidebar Layout Matrix
-            const navContainer = document.getElementById('sample-navigation-list');
-            let navHTML = `
-                <button onclick="switchActiveScope('cohort_view_summary')" id="nav-cohort_view_summary" class="w-full text-left px-3 py-2 rounded-md font-mono text-xs font-semibold flex justify-between items-center transition bg-indigo-600/20 border border-indigo-500/30 text-indigo-300">
-                    <span>📁 Unified Cohort Overview</span>
-                </button>
-                <div class="h-px bg-slate-900 my-2"></div>
-            `;
-
-            Object.keys(cohortData.samples).forEach(name => {
-                navHTML += `
-                    <button onclick="switchActiveScope('${name}')" id="nav-${name}" class="w-full text-left px-3 py-1.5 rounded-md font-mono text-[11px] text-slate-400 hover:text-slate-200 hover:bg-slate-900 transition flex justify-between items-center border border-transparent">
-                        <span class="truncate pr-2">🧬 ${name}</span>
-                        <span class="text-[10px] bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">${cohortData.samples[name].totalVariants}</span>
-                    </button>
-                `;
-            });
-            navContainer.innerHTML = navHTML;
-            
-            switchActiveScope('cohort_view_summary');
-        }
-
-        function switchActiveScope(scopeId) {
-            // Toggle highlight styles across structural list components
-            document.querySelectorAll('#sample-navigation-list button').forEach(btn => {
-                btn.classList.remove('bg-indigo-600/20', 'border-indigo-500/30', 'text-indigo-300', 'bg-slate-900/60', 'border-slate-800', 'text-slate-200');
-                btn.classList.add('text-slate-400', 'border-transparent');
-            });
-
-            const activeBtn = document.getElementById(`nav-${scopeId}`);
-            if (activeBtn) {
-                if (scopeId === 'cohort_view_summary') {
-                    activeBtn.classList.add('bg-indigo-600/20', 'border-indigo-500/30', 'text-indigo-300');
-                } else {
-                    activeBtn.classList.add('bg-slate-900/60', 'border-slate-800', 'text-slate-200');
+                if (rawParsedVariants.length < 500) {
+                    rawParsedVariants.push({ chrom, pos, ref, alt, qual, filter });
                 }
             }
 
-            activeScopeId = scopeId;
-            const targetData = (scopeId === 'cohort_view_summary') ? cohortData.aggregated : cohortData.samples[scopeId];
-
-            // Render Core Metrics Parameters
-            document.getElementById('metric-total').innerText = targetData.totalVariants.toLocaleString();
-            document.getElementById('metric-snps').innerText = targetData.snps.toLocaleString();
-            document.getElementById('metric-indels').innerText = targetData.indels.toLocaleString();
+            // Render Metrics directly to workspace indicators
+            document.getElementById('metric-total').innerText = totalVariants.toLocaleString();
+            document.getElementById('metric-snps').innerText = snps.toLocaleString();
+            document.getElementById('metric-indels').innerText = indels.toLocaleString();
             
-            const tiTv = targetData.transversions > 0 ? (targetData.transitions / targetData.transversions).toFixed(2) : "0.00";
-            document.getElementById('metric-titv').innerText = `${tiTv}x`;
+            const titvRatio = transversions > 0 ? (transitions / transversions).toFixed(2) : "0.00";
+            document.getElementById('metric-titv').innerText = `${titvRatio}x`;
 
-            // Adjust interface titles dynamically
-            if (scopeId === 'cohort_view_summary') {
-                document.getElementById('chart-primary-title').innerText = "Cohort Variant Load Across Samples";
-                document.getElementById('table-title').innerText = "Consolidated Cohort Top Vectors Explorer";
-                renderCohortComparisonChart();
-            } else {
-                document.getElementById('chart-primary-title').innerText = `Chromosomal Alignment Distribution (${scopeId})`;
-                document.getElementById('table-title').innerText = `Sample Alignment Inspector: ${scopeId}`;
-                renderSingleSampleChrChart(targetData.chromosomes);
-            }
+            // Draw and render Data Tables
+            renderTableRows(rawParsedVariants);
 
-            // Populate Functional Charts mapping
-            renderFunctionalImpactChart(targetData.impacts);
-
-            // Populate Top Targeted Genes Data Array
-            const sortedGenes = Object.entries(targetData.geneMetrics).sort((a,b) => b[1] - a[1]).slice(0, 5);
+            // Compute and append top targeted gene profiles
+            const rankedGenes = Object.entries(geneMetrics).sort((a,b) => b[1] - a[1]).slice(0, 5);
             const geneContainer = document.getElementById('gene-ranking-container');
-            if (sortedGenes.length > 0) {
-                geneContainer.innerHTML = sortedGenes.map(([gene, count], i) => `
-                    <div class="flex justify-between items-center bg-slate-950/40 p-2 rounded border border-slate-900">
-                        <span class="text-slate-300 font-medium">${gene}</span>
-                        <span class="text-[10px] bg-slate-900 text-indigo-400 border border-slate-800 px-1.5 py-0.5 rounded">${count} hits</span>
+            if (rankedGenes.length > 0) {
+                geneContainer.innerHTML = rankedGenes.map(([name, total], index) => `
+                    <div class="flex justify-between items-center bg-slate-950/50 p-2 rounded.md border border-slate-900/60">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] text-slate-500 font-bold">0${index+1}</span>
+                            <span class="text-slate-200 font-semibold text-xs tracking-wide">${name}</span>
+                        </div>
+                        <span class="bg-emerald-950/40 text-emerald-400 font-medium px-2 py-0.5 rounded border border-emerald-500/10 text-[11px]">${total} muts</span>
                     </div>
                 `).join('');
             } else {
-                geneContainer.innerHTML = `<div class="text-slate-600 italic text-[10px] p-2">No annotation markers matched.</div>`;
+                geneContainer.innerHTML = `<p class="text-slate-500 text-xs italic">No standard ANN gene tags detected in parsing array.</p>`;
             }
 
-            // Populate Dynamic Sequence Table Matrix
-            if (scopeId === 'cohort_view_summary') {
-                // For global cohort view, merge up head arrays from sample arrays safely
-                let masterRows = [];
-                Object.keys(cohortData.samples).forEach(sName => {
-                    masterRows = masterRows.concat(cohortData.samples[sName].rows.slice(0, 50));
-                });
-                renderTableRows(masterRows.slice(0, 500));
-            } else {
-                renderTableRows(targetData.rows);
-            }
-        }
+            // Clean active instances to avoid DOM overlaps
+            if (charts.chr) charts.chr.destroy();
+            if (charts.impact) charts.impact.destroy();
 
-        function renderCohortComparisonChart() {
-            destroyActiveChartInstance('primaryChart');
-            const sampleNames = Object.keys(cohortData.samples);
-            const variantLoads = sampleNames.map(name => cohortData.samples[name].totalVariants);
-
-            activeCharts.primaryChart = new Chart(document.getElementById('primaryChart'), {
+            // Render Primary Structural Mapping Matrix Chart
+            const organizedChr = Object.entries(chromosomes).sort((a,b) => b[1] - a[1]);
+            charts.chr = new Chart(document.getElementById('chrChart'), {
                 type: 'bar',
                 data: {
-                    labels: sampleNames,
+                    labels: organizedChr.map(x => x[0]),
                     datasets: [{
-                        data: variantLoads,
-                        backgroundColor: '#6366f1',
-                        hoverBackgroundColor: '#818cf8',
-                        borderRadius: 5,
-                        barPercentage: 0.5
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { grid: { display: false }, ticks: { color: '#64748b', font: { family: 'monospace', size: 9 } } },
-                        y: { grid: { color: '#1e293b' }, ticks: { color: '#64748b', font: { family: 'monospace', size: 9 } } }
-                    }
-                }
-            });
-        }
-
-        function renderSingleSampleChrChart(chromMap) {
-            destroyActiveChartInstance('primaryChart');
-            const sortedChr = Object.entries(chromMap).sort((a,b) => b[1] - a[1]);
-
-            activeCharts.primaryChart = new Chart(document.getElementById('primaryChart'), {
-                type: 'bar',
-                data: {
-                    labels: sortedChr.map(x => x[0]),
-                    datasets: [{
-                        data: sortedChr.map(x => x[1]),
+                        data: organizedChr.map(x => x[1]),
                         backgroundColor: '#10b981',
-                        borderRadius: 5,
-                        barPercentage: 0.6
+                        hoverBackgroundColor: '#34d399',
+                        borderRadius: 6,
+                        barPercentage: 0.65
                     }]
                 },
                 options: {
@@ -405,92 +303,75 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        x: { grid: { display: false }, ticks: { color: '#64748b', font: { family: 'monospace', size: 9 } } },
-                        y: { grid: { color: '#1e293b' }, ticks: { color: '#64748b', font: { family: 'monospace', size: 9 } } }
+                        x: { grid: { display: false }, ticks: { color: '#64748b', font: { family: 'monospace', size: 10 } } },
+                        y: { grid: { color: '#1e293b' }, ticks: { color: '#64748b', font: { family: 'monospace', size: 10 } } }
                     }
                 }
             });
-        }
 
-        function renderFunctionalImpactChart(impactData) {
-            destroyActiveChartInstance('secondaryChart');
-            activeCharts.secondaryChart = new Chart(document.getElementById('secondaryChart'), {
+            // Render Premium High Impact Functional Distribution Doughnut Chart
+            charts.impact = new Chart(document.getElementById('impactChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: Object.keys(impactData),
+                    labels: Object.keys(impacts),
                     datasets: [{
-                        data: Object.values(impactData),
+                        data: Object.values(impacts),
                         backgroundColor: ['#f59e0b', '#ef4444', '#3b82f6', '#475569'],
-                        borderWidth: 0
+                        borderWidth: 0,
+                        weight: 0.5
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'monospace', size: 10 }, boxWidth: 10 } } },
-                    cutout: '75%'
+                    plugins: { 
+                        legend: { 
+                            position: 'right', 
+                            labels: { color: '#94a3b8', font: { family: 'monospace', size: 11 }, boxWidth: 12, padding: 15 } 
+                        } 
+                    },
+                    cutout: '72%'
                 }
             });
+
+            // Swap interface layout elements
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('dashboard-view').classList.remove('hidden');
         }
 
         function renderTableRows(records) {
             const container = document.getElementById('variant-rows');
-            if (!records || records.length === 0) {
-                container.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-600 italic">No corresponding sequence records matched active filters.</td></tr>`;
+            if (records.length === 0) {
+                container.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-slate-500 italic">No corresponding rows match your active query framework.</td></tr>`;
                 return;
             }
             container.innerHTML = records.map(v => `
-                <tr class="hover:bg-slate-900/30 transition-colors">
-                    <td class="p-3 text-emerald-400 font-bold">${v.chrom}</td>
-                    <td class="p-3 text-slate-300">${parseInt(v.pos).toLocaleString()}</td>
-                    <td class="p-3 text-amber-500 font-semibold">${v.ref}</td>
-                    <td class="p-3 text-indigo-400 font-semibold">${v.alt}</td>
-                    <td class="p-3 text-slate-500">${v.qual}</td>
-                    <td class="p-3"><span class="px-2 py-0.5 rounded text-[9px] font-bold ${v.filter === 'PASS' || v.filter === '.' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'}">${v.filter}</span></td>
+                <tr class="hover:bg-slate-900/30 transition-colors duration-150">
+                    <td class="p-4 font-bold text-emerald-400 tracking-wide">${v.chrom}</td>
+                    <td class="p-4 text-slate-300">${parseInt(v.pos).toLocaleString()}</td>
+                    <td class="p-4 text-amber-400 font-medium">${v.ref}</td>
+                    <td class="p-4 text-indigo-400 font-medium">${v.alt}</td>
+                    <td class="p-4 text-slate-400">${v.qual}</td>
+                    <td class="p-4"><span class="px-2.5 py-0.5 rounded text-[10px] font-semibold tracking-wider ${v.filter === 'PASS' || v.filter === '.' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'}">${v.filter}</span></td>
                 </tr>
             `).join('');
         }
 
-        function destroyActiveChartInstance(chartId) {
-            if (activeCharts[chartId]) {
-                activeCharts[chartId].destroy();
-            }
-        }
-
-        // Live Real-Time Data Search Filtering Matrix Controller
+        // Live Real-Time Data Search Filter Matrix Engine
         document.getElementById('table-search').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
-            let baseArray = [];
-            
-            if (activeScopeId === 'cohort_view_summary') {
-                Object.keys(cohortData.samples).forEach(s => { baseArray = baseArray.concat(cohortData.samples[s].rows); });
-            } else {
-                baseArray = cohortData.samples[activeScopeId].rows;
-            }
-
             if (!query) {
-                renderTableRows(baseArray.slice(0, 500));
+                renderTableRows(rawParsedVariants);
                 return;
             }
-
-            const filtered = baseArray.filter(v => 
+            const filtered = rawParsedVariants.filter(v => 
                 v.chrom.toLowerCase().includes(query) || 
                 v.pos.toString().includes(query) || 
                 v.ref.toLowerCase().includes(query) || 
                 v.alt.toLowerCase().includes(query)
             );
-            renderTableRows(filtered.slice(0, 500));
+            renderTableRows(filtered);
         });
-
-        function clearSuiteState() {
-            cohortData = { samples: {}, aggregated: { totalVariants: 0, snps: 0, indels: 0, transitions: 0, transversions: 0, chromosomes: {}, impacts: { HIGH: 0, MODERATE: 0, LOW: 0, MODIFIER: 0 }, geneMetrics: {} } };
-            Object.keys(activeCharts).forEach(c => activeCharts[c].destroy());
-            activeCharts = {};
-            document.getElementById('dashboard-view').classList.add('hidden');
-            document.getElementById('reset-suite').classList.add('hidden');
-            document.getElementById('upload-section').classList.remove('hidden');
-            document.getElementById('vcf-files').value = "";
-        }
     </script>
 </body>
 </html>
