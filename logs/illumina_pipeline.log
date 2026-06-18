@@ -1,0 +1,15 @@
+2026-06-05 16:46:40,510 [INFO] Starting automated Illumina paired-end analysis pipeline.
+2026-06-05 16:47:40,338 [INFO] Starting automated Illumina paired-end analysis pipeline.
+2026-06-05 16:54:11,295 [INFO] Starting automated Illumina paired-end analysis pipeline.
+2026-06-05 16:54:11,295 [INFO] STARTING: BWA Reference Indexing
+2026-06-05 16:54:11,740 [INFO] SUCCESS: BWA Reference Indexing completed in 0.44s
+2026-06-05 16:54:11,813 [INFO] Registering genomic entry 'GCF_040556925.1_ASM4055692v1_genomic' in SnpEff configuration.
+2026-06-05 16:54:11,818 [INFO] STARTING: Building custom SnpEff database for GCF_040556925.1_ASM4055692v1_genomic
+2026-06-05 16:54:14,056 [INFO] SUCCESS: Building custom SnpEff database for GCF_040556925.1_ASM4055692v1_genomic completed in 2.24s
+2026-06-05 16:54:14,058 [ERROR] No R1 fastq files found in data/. Ensure files end in _1.fastq.gz or _R1.fastq.gz
+2026-06-05 16:55:35,809 [INFO] Starting automated Illumina paired-end analysis pipeline.
+2026-06-05 16:55:35,809 [INFO] SnpEff database for 'GCF_040556925.1_ASM4055692v1_genomic' already exists. Skipping build step.
+2026-06-05 16:55:35,810 [ERROR] No R1 fastq files found in data_illumina/. Ensure files end in _1.fastq.gz or _R1.fastq.gz
+2026-06-05 16:57:03,785 [INFO] Starting automated Illumina paired-end analysis pipeline.
+2026-06-05 16:57:03,786 [INFO] SnpEff database for 'GCF_040556925.1_ASM4055692v1_genomic' already exists. Skipping build step.
+2026-06-05 16:57:03,786 [ERROR] No R1 fastq files found in data_illumina/. Ensure files end in _1.fastq.gz or _R1.fastq.gz

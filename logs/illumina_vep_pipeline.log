@@ -1,0 +1,236 @@
+2026-06-06 12:17:02,740 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-06 12:19:08,115 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-06 12:19:08,115 [INFO] STARTING: BWA Reference Indexing
+2026-06-06 12:19:10,797 [INFO] SUCCESS: BWA Reference Indexing completed in 2.68s
+2026-06-06 12:19:10,797 [INFO] Checking VEP reference index status...
+2026-06-06 12:19:10,797 [INFO] STARTING: Compressing FASTA for VEP
+2026-06-06 12:19:11,668 [INFO] SUCCESS: Compressing FASTA for VEP completed in 0.87s
+2026-06-06 12:19:11,669 [INFO] STARTING: Indexing compressed FASTA
+2026-06-06 12:19:11,750 [INFO] SUCCESS: Indexing compressed FASTA completed in 0.08s
+2026-06-06 12:19:11,750 [INFO] STARTING: Coordinate-sorting and compressing GFF3 for VEP
+2026-06-06 12:19:11,842 [INFO] SUCCESS: Coordinate-sorting and compressing GFF3 for VEP completed in 0.09s
+2026-06-06 12:19:11,843 [INFO] STARTING: Tabix indexing GFF3 file
+2026-06-06 12:19:11,874 [INFO] SUCCESS: Tabix indexing GFF3 file completed in 0.03s
+2026-06-06 12:19:11,875 [INFO] Identified 1 paired samples for processing.
+2026-06-06 12:19:11,875 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR37616657
+============================================================
+2026-06-06 12:19:11,875 [INFO] STARTING: [SRR37616657] Fastp Quality Trimming
+2026-06-06 12:20:19,899 [INFO] SUCCESS: [SRR37616657] Fastp Quality Trimming completed in 68.02s
+2026-06-06 12:20:19,900 [INFO] STARTING: [SRR37616657] BWA-MEM Alignment & Sorting
+2026-06-06 12:22:27,818 [INFO] SUCCESS: [SRR37616657] BWA-MEM Alignment & Sorting completed in 127.92s
+2026-06-06 12:22:27,819 [INFO] STARTING: [SRR37616657] BAM Indexing
+2026-06-06 12:22:28,472 [INFO] SUCCESS: [SRR37616657] BAM Indexing completed in 0.65s
+2026-06-06 12:22:28,472 [INFO] STARTING: [SRR37616657] Bcftools Variant Calling
+2026-06-06 12:23:05,026 [INFO] SUCCESS: [SRR37616657] Bcftools Variant Calling completed in 36.55s
+2026-06-06 12:23:05,026 [INFO] STARTING: [SRR37616657] VEP Functional Annotation
+2026-06-06 12:23:05,038 [ERROR] ERROR: Step failed during [SRR37616657] VEP Functional Annotation
+2026-06-06 12:23:05,038 [ERROR] Exit code: 127
+2026-06-06 12:23:05,039 [ERROR] Error output:
+/bin/bash: line 1: vep: command not found
+
+2026-06-06 14:45:51,677 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-06 14:45:51,679 [INFO] Checking VEP reference index status...
+2026-06-06 14:45:51,690 [INFO] Identified 1 paired samples for processing.
+2026-06-06 14:45:51,691 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR37616657
+============================================================
+2026-06-06 14:45:51,691 [INFO] STARTING: [SRR37616657] Fastp Quality Trimming
+2026-06-06 14:46:51,921 [INFO] SUCCESS: [SRR37616657] Fastp Quality Trimming completed in 60.23s
+2026-06-06 14:46:51,922 [INFO] STARTING: [SRR37616657] BWA-MEM Alignment & Sorting
+2026-06-06 14:48:10,588 [INFO] SUCCESS: [SRR37616657] BWA-MEM Alignment & Sorting completed in 78.67s
+2026-06-06 14:48:10,588 [INFO] STARTING: [SRR37616657] BAM Indexing
+2026-06-06 14:48:10,897 [INFO] SUCCESS: [SRR37616657] BAM Indexing completed in 0.31s
+2026-06-06 14:48:10,897 [INFO] STARTING: [SRR37616657] Bcftools Variant Calling
+2026-06-06 14:48:37,421 [INFO] SUCCESS: [SRR37616657] Bcftools Variant Calling completed in 26.52s
+2026-06-06 14:48:37,422 [INFO] STARTING: [SRR37616657] VEP Functional Annotation
+2026-06-06 14:49:01,955 [INFO] SUCCESS: [SRR37616657] VEP Functional Annotation completed in 24.53s
+2026-06-06 14:49:02,278 [INFO] [SRR37616657] Cleaning up intermediate fastq files...
+2026-06-06 14:49:02,300 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================
+2026-06-06 15:07:23,176 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-06 15:07:23,176 [INFO] Checking VEP reference index status...
+2026-06-06 15:07:23,177 [INFO] Identified 1 paired samples for processing.
+2026-06-06 15:07:23,177 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR37616658
+============================================================
+2026-06-06 15:07:23,177 [INFO] STARTING: [SRR37616658] Fastp Quality Trimming
+2026-06-06 15:08:21,023 [INFO] SUCCESS: [SRR37616658] Fastp Quality Trimming completed in 57.85s
+2026-06-06 15:08:21,024 [INFO] STARTING: [SRR37616658] BWA-MEM Alignment & Sorting
+2026-06-06 15:10:04,855 [INFO] SUCCESS: [SRR37616658] BWA-MEM Alignment & Sorting completed in 103.83s
+2026-06-06 15:10:04,856 [INFO] STARTING: [SRR37616658] BAM Indexing
+2026-06-06 15:10:05,324 [INFO] SUCCESS: [SRR37616658] BAM Indexing completed in 0.47s
+2026-06-06 15:10:05,324 [INFO] STARTING: [SRR37616658] Bcftools Variant Calling
+2026-06-06 15:10:40,995 [INFO] SUCCESS: [SRR37616658] Bcftools Variant Calling completed in 35.67s
+2026-06-06 15:10:40,996 [INFO] STARTING: [SRR37616658] VEP Functional Annotation
+2026-06-06 15:11:03,064 [INFO] SUCCESS: [SRR37616658] VEP Functional Annotation completed in 22.07s
+2026-06-06 15:11:03,350 [INFO] [SRR37616658] Cleaning up intermediate fastq files...
+2026-06-06 15:11:03,375 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================
+2026-06-09 15:44:20,671 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-09 15:44:20,672 [INFO] STARTING: BWA Reference Indexing
+2026-06-09 15:44:20,966 [INFO] SUCCESS: BWA Reference Indexing completed in 0.29s
+2026-06-09 15:44:20,967 [INFO] Checking VEP reference index status...
+2026-06-09 15:44:20,967 [INFO] STARTING: Compressing FASTA for VEP
+2026-06-09 15:44:21,065 [INFO] SUCCESS: Compressing FASTA for VEP completed in 0.10s
+2026-06-09 15:44:21,066 [INFO] STARTING: Indexing compressed FASTA
+2026-06-09 15:44:21,100 [INFO] SUCCESS: Indexing compressed FASTA completed in 0.03s
+2026-06-09 15:44:21,101 [INFO] STARTING: Coordinate-sorting and compressing GFF3 for VEP
+2026-06-09 15:44:21,134 [INFO] SUCCESS: Coordinate-sorting and compressing GFF3 for VEP completed in 0.03s
+2026-06-09 15:44:21,134 [INFO] STARTING: Tabix indexing GFF3 file
+2026-06-09 15:44:21,158 [INFO] SUCCESS: Tabix indexing GFF3 file completed in 0.02s
+2026-06-09 15:44:21,160 [ERROR] No R1 fastq files found in data/. Ensure files end in _1.fastq.gz or _R1.fastq.gz
+2026-06-09 15:45:57,411 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-09 15:45:57,411 [INFO] Checking VEP reference index status...
+2026-06-09 15:45:57,411 [ERROR] No R1 fastq files found in data/. Ensure files end in _1.fastq.gz or _R1.fastq.gz
+2026-06-09 15:47:16,918 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-09 15:47:16,918 [INFO] Checking VEP reference index status...
+2026-06-09 15:47:16,919 [INFO] Identified 1 paired samples for processing.
+2026-06-09 15:47:16,919 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: ERR17019772
+============================================================
+2026-06-09 15:47:16,919 [INFO] STARTING: [ERR17019772] Fastp Quality Trimming
+2026-06-09 15:47:16,953 [ERROR] ERROR: Step failed during [ERR17019772] Fastp Quality Trimming
+2026-06-09 15:47:16,954 [ERROR] Exit code: 255
+2026-06-09 15:47:16,954 [ERROR] Error output:
+ERROR: igzip: Error invalid gzip header found: data/ERR17019772_1.fastq.gz
+
+2026-06-09 15:50:30,388 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-09 15:50:30,388 [INFO] Checking VEP reference index status...
+2026-06-09 15:50:30,389 [INFO] Identified 1 paired samples for processing.
+2026-06-09 15:50:30,389 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: ERR17019772
+============================================================
+2026-06-09 15:50:30,389 [INFO] STARTING: [ERR17019772] Fastp Quality Trimming
+2026-06-09 15:50:56,734 [INFO] SUCCESS: [ERR17019772] Fastp Quality Trimming completed in 26.34s
+2026-06-09 15:50:56,735 [INFO] STARTING: [ERR17019772] BWA-MEM Alignment & Sorting
+2026-06-09 15:51:05,424 [INFO] SUCCESS: [ERR17019772] BWA-MEM Alignment & Sorting completed in 8.69s
+2026-06-09 15:51:05,425 [INFO] STARTING: [ERR17019772] BAM Indexing
+2026-06-09 15:51:05,508 [INFO] SUCCESS: [ERR17019772] BAM Indexing completed in 0.08s
+2026-06-09 15:51:05,508 [INFO] STARTING: [ERR17019772] Bcftools Variant Calling
+2026-06-09 15:51:06,143 [INFO] SUCCESS: [ERR17019772] Bcftools Variant Calling completed in 0.63s
+2026-06-09 15:51:06,143 [INFO] STARTING: [ERR17019772] VEP Functional Annotation
+2026-06-09 15:51:10,722 [INFO] SUCCESS: [ERR17019772] VEP Functional Annotation completed in 4.58s
+2026-06-09 15:51:10,722 [INFO] [ERR17019772] Cleaning up intermediate fastq files...
+2026-06-09 15:51:10,724 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================
+2026-06-10 11:47:52,942 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-10 11:47:52,943 [INFO] STARTING: BWA Reference Indexing
+2026-06-10 11:48:02,016 [INFO] SUCCESS: BWA Reference Indexing completed in 9.07s
+2026-06-10 11:48:02,016 [INFO] Checking VEP reference index status...
+2026-06-10 11:48:02,016 [INFO] STARTING: Compressing FASTA for VEP
+2026-06-10 11:48:02,994 [INFO] SUCCESS: Compressing FASTA for VEP completed in 0.98s
+2026-06-10 11:48:02,994 [INFO] STARTING: Indexing compressed FASTA
+2026-06-10 11:48:03,102 [INFO] SUCCESS: Indexing compressed FASTA completed in 0.11s
+2026-06-10 11:48:03,103 [INFO] STARTING: Coordinate-sorting and compressing GFF3 for VEP
+2026-06-10 11:48:03,462 [INFO] SUCCESS: Coordinate-sorting and compressing GFF3 for VEP completed in 0.36s
+2026-06-10 11:48:03,462 [INFO] STARTING: Tabix indexing GFF3 file
+2026-06-10 11:48:03,518 [INFO] SUCCESS: Tabix indexing GFF3 file completed in 0.06s
+2026-06-10 11:48:03,519 [INFO] Identified 1 paired samples for processing.
+2026-06-10 11:48:03,520 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: ERR17019772
+============================================================
+2026-06-10 11:48:03,520 [INFO] STARTING: [ERR17019772] Fastp Quality Trimming
+2026-06-10 11:48:29,253 [INFO] SUCCESS: [ERR17019772] Fastp Quality Trimming completed in 25.73s
+2026-06-10 11:48:29,253 [INFO] STARTING: [ERR17019772] BWA-MEM Alignment & Sorting
+2026-06-10 11:48:42,101 [INFO] SUCCESS: [ERR17019772] BWA-MEM Alignment & Sorting completed in 12.85s
+2026-06-10 11:48:42,102 [INFO] STARTING: [ERR17019772] BAM Indexing
+2026-06-10 11:48:42,187 [INFO] SUCCESS: [ERR17019772] BAM Indexing completed in 0.09s
+2026-06-10 11:48:42,187 [INFO] STARTING: [ERR17019772] Bcftools Variant Calling
+2026-06-10 11:48:42,647 [INFO] SUCCESS: [ERR17019772] Bcftools Variant Calling completed in 0.46s
+2026-06-10 11:48:42,648 [INFO] STARTING: [ERR17019772] VEP Functional Annotation
+2026-06-10 11:48:46,589 [INFO] SUCCESS: [ERR17019772] VEP Functional Annotation completed in 3.94s
+2026-06-10 11:48:46,590 [INFO] [ERR17019772] Cleaning up intermediate fastq files...
+2026-06-10 11:48:46,593 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================
+2026-06-10 13:29:15,830 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-10 13:29:15,830 [INFO] Checking VEP reference index status...
+2026-06-10 13:29:15,830 [ERROR] No R1 fastq files found in data/. Ensure files end in _1.fastq.gz or _R1.fastq.gz
+2026-06-10 13:29:42,759 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-10 13:29:42,759 [INFO] Checking VEP reference index status...
+2026-06-10 13:29:42,760 [INFO] Identified 1 paired samples for processing.
+2026-06-10 13:29:42,760 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR36206014
+============================================================
+2026-06-10 13:29:42,760 [INFO] STARTING: [SRR36206014] Fastp Quality Trimming
+2026-06-10 13:30:21,766 [INFO] SUCCESS: [SRR36206014] Fastp Quality Trimming completed in 39.01s
+2026-06-10 13:30:21,767 [INFO] STARTING: [SRR36206014] BWA-MEM Alignment & Sorting
+2026-06-10 13:33:11,548 [INFO] SUCCESS: [SRR36206014] BWA-MEM Alignment & Sorting completed in 169.78s
+2026-06-10 13:33:11,549 [INFO] STARTING: [SRR36206014] BAM Indexing
+2026-06-10 13:33:12,481 [INFO] SUCCESS: [SRR36206014] BAM Indexing completed in 0.93s
+2026-06-10 13:33:12,481 [INFO] STARTING: [SRR36206014] Bcftools Variant Calling
+2026-06-10 13:34:35,568 [INFO] SUCCESS: [SRR36206014] Bcftools Variant Calling completed in 83.09s
+2026-06-10 13:34:35,568 [INFO] STARTING: [SRR36206014] VEP Functional Annotation
+2026-06-10 13:34:49,046 [INFO] SUCCESS: [SRR36206014] VEP Functional Annotation completed in 13.48s
+2026-06-10 13:34:49,074 [INFO] [SRR36206014] Cleaning up intermediate fastq files...
+2026-06-10 13:34:49,090 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================
+2026-06-13 00:11:48,943 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-13 00:11:48,944 [INFO] Checking VEP reference index status...
+2026-06-13 00:11:48,944 [INFO] Identified 1 paired samples for processing.
+2026-06-13 00:11:48,944 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR36206014
+============================================================
+2026-06-13 00:11:48,944 [INFO] STARTING: [SRR36206014] Fastp Quality Trimming
+2026-06-13 00:11:48,947 [ERROR] ERROR: Step failed during [SRR36206014] Fastp Quality Trimming
+2026-06-13 00:11:48,947 [ERROR] Exit code: 127
+2026-06-13 00:11:48,947 [ERROR] Error output:
+/bin/bash: line 1: fastp: command not found
+
+2026-06-13 00:12:42,807 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-13 00:12:42,808 [INFO] Checking VEP reference index status...
+2026-06-13 00:12:42,808 [INFO] Identified 1 paired samples for processing.
+2026-06-13 00:12:42,808 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR36206014
+============================================================
+2026-06-13 00:12:42,808 [INFO] STARTING: [SRR36206014] Fastp Quality Trimming
+2026-06-13 00:13:28,182 [INFO] SUCCESS: [SRR36206014] Fastp Quality Trimming completed in 45.37s
+2026-06-13 00:13:28,183 [INFO] STARTING: [SRR36206014] BWA-MEM Alignment & Sorting
+2026-06-13 00:13:28,186 [ERROR] ERROR: Step failed during [SRR36206014] BWA-MEM Alignment & Sorting
+2026-06-13 00:13:28,186 [ERROR] Exit code: 127
+2026-06-13 00:13:28,186 [ERROR] Error output:
+/bin/bash: line 1: bwa: command not found
+/bin/bash: line 1: samtools: command not found
+/bin/bash: line 1: samtools: command not found
+
+2026-06-13 00:25:47,814 [INFO] Starting automated Illumina paired-end VEP pipeline.
+2026-06-13 00:25:47,817 [INFO] Checking VEP reference index status...
+2026-06-13 00:25:47,820 [INFO] Identified 1 paired samples for processing.
+2026-06-13 00:25:47,820 [INFO] 
+============================================================
+ PROCESSING ILLUMINA SAMPLE: SRR36206014
+============================================================
+2026-06-13 00:25:47,820 [INFO] STARTING: [SRR36206014] Fastp Quality Trimming
+2026-06-13 00:26:28,792 [INFO] SUCCESS: [SRR36206014] Fastp Quality Trimming completed in 40.97s
+2026-06-13 00:26:28,793 [INFO] STARTING: [SRR36206014] BWA-MEM Alignment & Sorting
+2026-06-13 00:29:26,737 [INFO] SUCCESS: [SRR36206014] BWA-MEM Alignment & Sorting completed in 177.94s
+2026-06-13 00:29:26,737 [INFO] STARTING: [SRR36206014] BAM Indexing
+2026-06-13 00:29:27,712 [INFO] SUCCESS: [SRR36206014] BAM Indexing completed in 0.98s
+2026-06-13 00:29:27,713 [INFO] STARTING: [SRR36206014] Bcftools Variant Calling
+2026-06-13 00:30:56,147 [INFO] SUCCESS: [SRR36206014] Bcftools Variant Calling completed in 88.43s
+2026-06-13 00:30:56,148 [INFO] STARTING: [SRR36206014] VEP Functional Annotation
+2026-06-13 00:31:09,825 [INFO] SUCCESS: [SRR36206014] VEP Functional Annotation completed in 13.68s
+2026-06-13 00:31:09,848 [INFO] [SRR36206014] Cleaning up intermediate fastq files...
+2026-06-13 00:31:09,893 [INFO] 
+============================================================
+ ALL ILLUMINA SAMPLES PROCESSED WITH VEP 
+============================================================

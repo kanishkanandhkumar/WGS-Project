@@ -1,0 +1,320 @@
+2026-06-15 08:57:27,322 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 08:57:27,322 [INFO] STARTING: Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.fna.mmi)
+2026-06-15 08:57:27,338 [INFO] SUCCESS: Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.fna.mmi) completed in 0.02s
+2026-06-15 08:57:27,338 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 08:57:42,811 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 15.47s
+2026-06-15 08:57:42,811 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 08:57:43,036 [INFO] SUCCESS: BAM spatial file indexing completed in 0.22s
+2026-06-15 08:57:43,036 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 08:58:12,373 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 29.34s
+2026-06-15 08:58:12,373 [INFO] Building local SnpEff database for the custom reference...
+2026-06-15 08:58:12,382 [INFO] STARTING: Compiling custom SnpEff genomic database
+2026-06-15 08:58:12,843 [ERROR] ERROR: Step failed during Compiling custom SnpEff genomic database
+2026-06-15 08:58:12,844 [ERROR] Exit code: 255
+2026-06-15 08:58:12,844 [ERROR] Error output:
+00:00:00 SnpEff version SnpEff 5.4c (build 2026-02-23 07:25), by Pablo Cingolani
+00:00:00 Command: 'build'
+00:00:00 Building database for 'GCF_009858895.2_ASM985889v3_genomic'
+00:00:00 Reading configuration file 'snpeff.config'. Genome: 'GCF_009858895.2_ASM985889v3_genomic'
+00:00:00 Looking for config file: '/home/kanishk/Desktop/wgs_project/snpeff.config'
+00:00:00 Reading config file: /home/kanishk/Desktop/wgs_project/snpeff.config
+00:00:00 done
+00:00:00 Reading GFF3 data file  : '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff'
+00:00:00 Reading file '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff'
+WARNING_TRANSCRIPT_NOT_FOUND: Cannot find transcript 'TRANSCRIPT_id-NC_045512.2:1..265'. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 9	'NC_045512.2	RefSeq	five_prime_UTR	1	265	.	+	.	ID=id-NC_045512.2:1..265;gbkey=5'UTR'
+WARNING_CANNOT_ADD_UTR: Could not add UTR. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 9	'NC_045512.2	RefSeq	five_prime_UTR	1	265	.	+	.	ID=id-NC_045512.2:1..265;gbkey=5'UTR'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp01' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp01' for NC_045512.2	RefSeq	CDS	265	13467	+
+	dbxref : GenBank:YP_009724389.1,GeneID:43740578
+	exception : ribosomal slippage
+	gbkey : CDS
+	gene : ORF1ab
+	id : cds-YP_009724389.1
+	locus_tag : GU280_gp01
+	name : YP_009724389.1
+	note : pp1ab%3B translated by -1 ribosomal frameshift
+	parent : gene-GU280_gp01
+	product : ORF1ab polyprotein
+	protein_id : YP_009724389.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 11	'NC_045512.2	RefSeq	CDS	266	13468	.	+	0	ID=cds-YP_009724389.1;Parent=gene-GU280_gp01;Dbxref=GenBank:YP_009724389.1,GeneID:43740578;Name=YP_009724389.1;Note=pp1ab%3B translated by -1 ribosomal frameshift;exception=ribosomal slippage;gbkey=CDS;gene=ORF1ab;locus_tag=GU280_gp01;product=ORF1ab polyprotein;protein_id=YP_009724389.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp02' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp02' for NC_045512.2	RefSeq	CDS	21562	25383	+
+	dbxref : GenBank:YP_009724390.1,GeneID:43740568
+	gbkey : CDS
+	gene : S
+	id : cds-YP_009724390.1
+	locus_tag : GU280_gp02
+	name : YP_009724390.1
+	note : structural protein%3B spike protein
+	parent : gene-GU280_gp02
+	product : surface glycoprotein
+	protein_id : YP_009724390.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 44	'NC_045512.2	RefSeq	CDS	21563	25384	.	+	0	ID=cds-YP_009724390.1;Parent=gene-GU280_gp02;Dbxref=GenBank:YP_009724390.1,GeneID:43740568;Name=YP_009724390.1;Note=structural protein%3B spike protein;gbkey=CDS;gene=S;locus_tag=GU280_gp02;product=surface glycoprotein;protein_id=YP_009724390.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp03' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp03' for NC_045512.2	RefSeq	CDS	25392	26219	+
+	dbxref : GenBank:YP_009724391.1,GeneID:43740569
+	gbkey : CDS
+	gene : ORF3a
+	id : cds-YP_009724391.1
+	locus_tag : GU280_gp03
+	name : YP_009724391.1
+	parent : gene-GU280_gp03
+	product : ORF3a protein
+	protein_id : YP_009724391.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 46	'NC_045512.2	RefSeq	CDS	25393	26220	.	+	0	ID=cds-YP_009724391.1;Parent=gene-GU280_gp03;Dbxref=GenBank:YP_009724391.1,GeneID:43740569;Name=YP_009724391.1;gbkey=CDS;gene=ORF3a;locus_tag=GU280_gp03;product=ORF3a protein;protein_id=YP_009724391.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp04' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp04' for NC_045512.2	RefSeq	CDS	26244	26471	+
+	dbxref : GenBank:YP_009724392.1,GeneID:43740570
+	gbkey : CDS
+	gene : E
+	id : cds-YP_009724392.1
+	locus_tag : GU280_gp04
+	name : YP_009724392.1
+	note : ORF4%3B structural protein%3B E protein
+	parent : gene-GU280_gp04
+	product : envelope protein
+	protein_id : YP_009724392.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 48	'NC_045512.2	RefSeq	CDS	26245	26472	.	+	0	ID=cds-YP_009724392.1;Parent=gene-GU280_gp04;Dbxref=GenBank:YP_009724392.1,GeneID:43740570;Name=YP_009724392.1;Note=ORF4%3B structural protein%3B E protein;gbkey=CDS;gene=E;locus_tag=GU280_gp04;product=envelope protein;protein_id=YP_009724392.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp05' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp05' for NC_045512.2	RefSeq	CDS	26522	27190	+
+	dbxref : GenBank:YP_009724393.1,GeneID:43740571
+	gbkey : CDS
+	gene : M
+	id : cds-YP_009724393.1
+	locus_tag : GU280_gp05
+	name : YP_009724393.1
+	note : ORF5%3B structural protein
+	parent : gene-GU280_gp05
+	product : membrane glycoprotein
+	protein_id : YP_009724393.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 50	'NC_045512.2	RefSeq	CDS	26523	27191	.	+	0	ID=cds-YP_009724393.1;Parent=gene-GU280_gp05;Dbxref=GenBank:YP_009724393.1,GeneID:43740571;Name=YP_009724393.1;Note=ORF5%3B structural protein;gbkey=CDS;gene=M;locus_tag=GU280_gp05;product=membrane glycoprotein;protein_id=YP_009724393.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp06' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp06' for NC_045512.2	RefSeq	CDS	27201	27386	+
+	dbxref : GenBank:YP_009724394.1,GeneID:43740572
+	gbkey : CDS
+	gene : ORF6
+	id : cds-YP_009724394.1
+	locus_tag : GU280_gp06
+	name : YP_009724394.1
+	parent : gene-GU280_gp06
+	product : ORF6 protein
+	protein_id : YP_009724394.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 52	'NC_045512.2	RefSeq	CDS	27202	27387	.	+	0	ID=cds-YP_009724394.1;Parent=gene-GU280_gp06;Dbxref=GenBank:YP_009724394.1,GeneID:43740572;Name=YP_009724394.1;gbkey=CDS;gene=ORF6;locus_tag=GU280_gp06;product=ORF6 protein;protein_id=YP_009724394.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp07' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp07' for NC_045512.2	RefSeq	CDS	27393	27758	+
+	dbxref : GenBank:YP_009724395.1,GeneID:43740573
+	gbkey : CDS
+	gene : ORF7a
+	id : cds-YP_009724395.1
+	locus_tag : GU280_gp07
+	name : YP_009724395.1
+	parent : gene-GU280_gp07
+	product : ORF7a protein
+	protein_id : YP_009724395.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 54	'NC_045512.2	RefSeq	CDS	27394	27759	.	+	0	ID=cds-YP_009724395.1;Parent=gene-GU280_gp07;Dbxref=GenBank:YP_009724395.1,GeneID:43740573;Name=YP_009724395.1;gbkey=CDS;gene=ORF7a;locus_tag=GU280_gp07;product=ORF7a protein;protein_id=YP_009724395.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp08' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp08' for NC_045512.2	RefSeq	CDS	27755	27886	+
+	dbxref : GenBank:YP_009725318.1,GeneID:43740574
+	gbkey : CDS
+	gene : ORF7b
+	id : cds-YP_009725318.1
+	locus_tag : GU280_gp08
+	name : YP_009725318.1
+	parent : gene-GU280_gp08
+	product : ORF7b
+	protein_id : YP_009725318.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 56	'NC_045512.2	RefSeq	CDS	27756	27887	.	+	0	ID=cds-YP_009725318.1;Parent=gene-GU280_gp08;Dbxref=GenBank:YP_009725318.1,GeneID:43740574;Name=YP_009725318.1;gbkey=CDS;gene=ORF7b;locus_tag=GU280_gp08;product=ORF7b;protein_id=YP_009725318.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp09' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp09' for NC_045512.2	RefSeq	CDS	27893	28258	+
+	dbxref : GenBank:YP_009724396.1,GeneID:43740577
+	gbkey : CDS
+	gene : ORF8
+	id : cds-YP_009724396.1
+	locus_tag : GU280_gp09
+	name : YP_009724396.1
+	parent : gene-GU280_gp09
+	product : ORF8 protein
+	protein_id : YP_009724396.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 58	'NC_045512.2	RefSeq	CDS	27894	28259	.	+	0	ID=cds-YP_009724396.1;Parent=gene-GU280_gp09;Dbxref=GenBank:YP_009724396.1,GeneID:43740577;Name=YP_009724396.1;gbkey=CDS;gene=ORF8;locus_tag=GU280_gp09;product=ORF8 protein;protein_id=YP_009724396.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp10' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp10' for NC_045512.2	RefSeq	CDS	28273	29532	+
+	dbxref : GenBank:YP_009724397.2,GeneID:43740575
+	gbkey : CDS
+	gene : N
+	id : cds-YP_009724397.2
+	locus_tag : GU280_gp10
+	name : YP_009724397.2
+	note : ORF9%3B structural protein
+	parent : gene-GU280_gp10
+	product : nucleocapsid phosphoprotein
+	protein_id : YP_009724397.2
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 60	'NC_045512.2	RefSeq	CDS	28274	29533	.	+	0	ID=cds-YP_009724397.2;Parent=gene-GU280_gp10;Dbxref=GenBank:YP_009724397.2,GeneID:43740575;Name=YP_009724397.2;Note=ORF9%3B structural protein;gbkey=CDS;gene=N;locus_tag=GU280_gp10;product=nucleocapsid phosphoprotein;protein_id=YP_009724397.2'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp11' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp11' for NC_045512.2	RefSeq	CDS	29557	29673	+
+	dbxref : GenBank:YP_009725255.1,GeneID:43740576
+	gbkey : CDS
+	gene : ORF10
+	id : cds-YP_009725255.1
+	locus_tag : GU280_gp11
+	name : YP_009725255.1
+	parent : gene-GU280_gp11
+	product : ORF10 protein
+	protein_id : YP_009725255.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 62	'NC_045512.2	RefSeq	CDS	29558	29674	.	+	0	ID=cds-YP_009725255.1;Parent=gene-GU280_gp11;Dbxref=GenBank:YP_009725255.1,GeneID:43740576;Name=YP_009725255.1;gbkey=CDS;gene=ORF10;locus_tag=GU280_gp11;product=ORF10 protein;protein_id=YP_009725255.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Cannot find transcript 'TRANSCRIPT_id-NC_045512.2:29675..29903'. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 65	'NC_045512.2	RefSeq	three_prime_UTR	29675	29903	.	+	.	ID=id-NC_045512.2:29675..29903;gbkey=3'UTR'
+WARNING_CANNOT_ADD_UTR: Could not add UTR. File '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/genes.gff' line 65	'NC_045512.2	RefSeq	three_prime_UTR	29675	29903	.	+	.	ID=id-NC_045512.2:29675..29903;gbkey=3'UTR'
+00:00:00 
+	Total: 11 markers added.
+00:00:00 Create exons from CDS (if needed): 
+00:00:00 Exons created for 11 transcripts.
+00:00:00 Deleting redundant exons (if needed): 
+.
+		0	00:00:00 	Total transcripts with deleted exons: 1
+00:00:00 Collapsing zero length introns (if needed): 
+.
+		0	00:00:00 	Total collapsed transcripts: 1
+00:00:00 	Reading sequences   :
+00:00:00 	FASTA file: '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/genomes/GCF_009858895.2_ASM985889v3_genomic.fa' not found.
+00:00:00 	Reading FASTA file: '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/sequences.fa'
+00:00:00 		Reading sequence 'NC_045512.2', length: 29903
+00:00:00 		Adding genomic sequences to genes: 
+00:00:00 	Done (10 sequences added).
+00:00:00 		Adding genomic sequences to exons: 
+00:00:00 	Done (11 sequences added, 0 ignored).
+00:00:00 	Total: 11 sequences added, 0 sequences ignored.
+00:00:00 Finishing up genome
+00:00:00 Adjusting transcripts: 
+00:00:00 Adjusting genes: 
+00:00:00 Adjusting chromosomes lengths: 
+00:00:00 Ranking exons: 
+00:00:00 Create UTRs from CDS (if needed): 
+00:00:00 Correcting exons based on frame information.
+	
+WARNING_FRAMES_ZERO: All frames are zero! This seems rather odd, please check that 'frame' information in your 'genes' file is accurate.
+00:00:00 
+00:00:00 Remove empty chromosomes: 
+00:00:00 Marking as 'coding' from CDS information: 
+00:00:00 Done: 0 transcripts marked
+00:00:00 
+00:00:00 #-----------------------------------------------
+# Genome name                : 'Custom Viral Genome'
+# Genome version             : 'GCF_009858895.2_ASM985889v3_genomic'
+# Genome ID                  : 'GCF_009858895.2_ASM985889v3_genomic[0]'
+# Has protein coding info    : true
+# Has Tr. Support Level info : true
+# Genes                      : 11
+# Protein coding genes       : 11
+#-----------------------------------------------
+# Transcripts                : 11
+# Avg. transcripts per gene  : 1.00
+# TSL transcripts            : 0
+#-----------------------------------------------
+# Checked transcripts        : 
+#               AA sequences :      0 ( 0.00% )
+#              DNA sequences :      0 ( 0.00% )
+#-----------------------------------------------
+# Protein coding transcripts : 11
+#              Length errors :      1 ( 9.09% )
+#  STOP codons in CDS errors :      1 ( 9.09% )
+#         START codon errors :      0 ( 0.00% )
+#        STOP codon warnings :      0 ( 0.00% )
+#              UTR sequences :      0 ( 0.00% )
+#               Total Errors :      1 ( 9.09% )
+# WARNING                    : No protein coding transcript has UTR
+#-----------------------------------------------
+# Cds                        : 11
+# Exons                      : 11
+# Exons with sequence        : 11
+# Exons without sequence     : 0
+# Avg. exons per transcript  : 1.00
+#-----------------------------------------------
+# Number of chromosomes      : 1
+# Chromosomes                : Format 'chromo_name size codon_table'
+#		'NC_045512.2'	29903	Standard
+#-----------------------------------------------
+
+00:00:00 Caracterizing exons by splicing (stage 1) : 
+
+00:00:00 Caracterizing exons by splicing (stage 2) : 
+00:00:00 done.
+00:00:00 [Optional] Rare amino acid annotations
+WARNING_FILE_NOT_FOUND: Rare Amino Acid analysis: Cannot read protein sequence file '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/protein.fa', nothing done.
+ERROR: CDS check file '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/cds.fa' not found.
+ERROR: Protein check file '/home/kanishk/Desktop/wgs_project/reference/snpeff_db/GCF_009858895.2_ASM985889v3_genomic/protein.fa' not found.
+ERROR: Database check failed.
+00:00:00 Done.
+
+2026-06-15 09:00:06,095 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 09:00:06,095 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 09:00:22,411 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.32s
+2026-06-15 09:00:22,412 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 09:00:22,647 [INFO] SUCCESS: BAM spatial file indexing completed in 0.24s
+2026-06-15 09:00:22,647 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 09:00:53,071 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 30.42s
+2026-06-15 09:00:53,072 [INFO] Building local SnpEff database for the custom reference...
+2026-06-15 09:00:53,079 [INFO] STARTING: Compiling custom SnpEff genomic database
+2026-06-15 09:00:53,637 [INFO] SUCCESS: Compiling custom SnpEff genomic database completed in 0.56s
+2026-06-15 09:00:53,638 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-15 09:00:55,280 [INFO] SUCCESS: SnpEff Functional Annotation completed in 1.64s
+2026-06-15 09:00:55,283 [INFO] Pipeline complete for ERR16055126.
+2026-06-15 09:02:02,342 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 09:02:02,342 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 09:02:18,801 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.46s
+2026-06-15 09:02:18,802 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 09:02:19,043 [INFO] SUCCESS: BAM spatial file indexing completed in 0.24s
+2026-06-15 09:02:19,043 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 09:02:49,443 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 30.40s
+2026-06-15 09:02:49,444 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-15 09:02:51,096 [INFO] SUCCESS: SnpEff Functional Annotation completed in 1.65s
+2026-06-15 09:02:51,099 [INFO] Pipeline complete for ERR16055126.
+2026-06-15 09:03:13,952 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 09:03:13,953 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 09:03:30,378 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.43s
+2026-06-15 09:03:30,378 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 09:03:30,612 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-15 09:03:30,612 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 09:04:00,908 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 30.30s
+2026-06-15 09:04:00,909 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-15 09:04:02,565 [INFO] SUCCESS: SnpEff Functional Annotation completed in 1.66s
+2026-06-15 09:04:02,567 [INFO] Pipeline complete for ERR16055126.
+2026-06-15 11:01:45,626 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 11:01:45,627 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 11:02:02,021 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.39s
+2026-06-15 11:02:02,021 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 11:02:02,272 [INFO] SUCCESS: BAM spatial file indexing completed in 0.25s
+2026-06-15 11:02:02,272 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 11:02:32,712 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 30.44s
+2026-06-15 11:02:32,712 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-15 11:02:34,533 [INFO] SUCCESS: SnpEff Functional Annotation completed in 1.82s
+2026-06-15 11:02:34,535 [INFO] Pipeline complete for ERR16055126.
+2026-06-15 12:15:26,437 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 12:15:26,438 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 12:15:44,832 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 18.39s
+2026-06-15 12:15:44,833 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 12:15:45,016 [INFO] SUCCESS: BAM spatial file indexing completed in 0.18s
+2026-06-15 12:15:45,016 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 12:16:17,144 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 32.13s
+2026-06-15 12:16:17,144 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-15 12:16:18,854 [INFO] SUCCESS: SnpEff Functional Annotation completed in 1.71s
+2026-06-15 12:16:18,857 [INFO] Pipeline complete for ERR16055126.
+2026-06-18 16:50:00,616 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-18 16:50:00,618 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-18 16:50:19,268 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 18.65s
+2026-06-18 16:50:19,268 [INFO] STARTING: BAM spatial file indexing
+2026-06-18 16:50:19,522 [INFO] SUCCESS: BAM spatial file indexing completed in 0.25s
+2026-06-18 16:50:19,523 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-18 16:50:50,421 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 30.90s
+2026-06-18 16:50:50,421 [INFO] STARTING: SnpEff Functional Annotation
+2026-06-18 16:50:52,604 [INFO] SUCCESS: SnpEff Functional Annotation completed in 2.18s
+2026-06-18 16:50:52,606 [INFO] Pipeline complete for ERR16055126.

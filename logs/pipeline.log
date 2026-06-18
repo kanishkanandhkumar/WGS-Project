@@ -1,0 +1,928 @@
+2026-06-04 21:42:52,417 [INFO] Starting automated universal bacterial WGS analysis pipeline.
+2026-06-04 21:42:52,418 [INFO] Verifying input file existence...
+2026-06-04 21:42:52,419 [ERROR] Required input file missing: data/ecoli_R1.fastq.gz
+2026-06-05 08:36:25,625 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:36:25,625 [INFO] Verifying input file existence...
+2026-06-05 08:36:25,626 [ERROR] Required input file missing: reference/sars_cov_2.fasta
+2026-06-05 08:37:21,144 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:37:21,144 [INFO] Verifying input file existence...
+2026-06-05 08:37:21,144 [INFO] All input files located successfully.
+2026-06-05 08:37:21,144 [INFO] STARTING: Samtools FASTA indexing
+2026-06-05 08:37:21,169 [INFO] SUCCESS: Samtools FASTA indexing completed in 0.03s
+2026-06-05 08:37:21,170 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:37:21,176 [ERROR] ERROR: Step failed during Minimap2 alignment and coordinate sorting
+2026-06-05 08:37:21,177 [ERROR] Exit code: 1
+2026-06-05 08:37:21,178 [ERROR] Error output:
+/bin/bash: line 1: minimap2: command not found
+[main_samview] fail to read the header from "-".
+samtools sort: failed to read header from "-"
+
+2026-06-05 08:38:20,373 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:38:20,373 [INFO] Verifying input file existence...
+2026-06-05 08:38:20,373 [INFO] All input files located successfully.
+2026-06-05 08:38:20,373 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:38:20,396 [ERROR] ERROR: Step failed during Minimap2 alignment and coordinate sorting
+2026-06-05 08:38:20,396 [ERROR] Exit code: 1
+2026-06-05 08:38:20,396 [ERROR] Error output:
+/bin/bash: line 1: minimap2: command not found
+[main_samview] fail to read the header from "-".
+[W::hts_set_opt] Cannot change block size for this format
+samtools sort: failed to read header from "-"
+
+2026-06-05 08:39:50,486 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:39:50,487 [INFO] Verifying input file existence...
+2026-06-05 08:39:50,487 [INFO] All input files located successfully.
+2026-06-05 08:39:50,487 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:40:07,062 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.57s
+2026-06-05 08:40:07,062 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 08:40:07,320 [INFO] SUCCESS: BAM spatial file indexing completed in 0.26s
+2026-06-05 08:40:07,320 [INFO] STARTING: Bcftools variant calling and quality filtering
+2026-06-05 08:40:07,387 [ERROR] ERROR: Step failed during Bcftools variant calling and quality filtering
+2026-06-05 08:40:07,387 [ERROR] Exit code: 255
+2026-06-05 08:40:07,387 [ERROR] Error output:
+[E::hts_open_format] Failed to open file "1000" : No such file or directory
+[mpileup] failed to open 1000: No such file or directory
+Failed to read from standard input: unknown file type
+Failed to read from standard input: unknown file type
+
+2026-06-05 08:42:04,513 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:42:04,513 [INFO] Verifying input file existence...
+2026-06-05 08:42:04,513 [INFO] All input files located successfully.
+2026-06-05 08:42:04,514 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:42:20,957 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.44s
+2026-06-05 08:42:20,958 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 08:42:21,188 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-05 08:42:21,188 [INFO] STARTING: Bcftools variant calling and quality filtering
+2026-06-05 08:42:30,777 [INFO] SUCCESS: Bcftools variant calling and quality filtering completed in 9.59s
+2026-06-05 08:42:30,878 [INFO] Registering genomic entry 'sars_cov_2' in SnpEff configuration.
+2026-06-05 08:42:30,880 [INFO] STARTING: Building custom SnpEff database for sars_cov_2
+2026-06-05 08:42:32,480 [ERROR] ERROR: Step failed during Building custom SnpEff database for sars_cov_2
+2026-06-05 08:42:32,480 [ERROR] Exit code: 255
+2026-06-05 08:42:32,480 [ERROR] Error output:
+00:00:00 SnpEff version SnpEff 5.4c (build 2026-02-23 07:25), by Pablo Cingolani
+00:00:00 Command: 'build'
+00:00:00 Building database for 'sars_cov_2'
+00:00:00 Reading configuration file 'snpEff.config'. Genome: 'sars_cov_2'
+00:00:00 Looking for config file: '/home/kanishk/Desktop/wgs_project/snpEff.config'
+00:00:00 Reading config file: /home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/snpEff.config
+00:00:01 done
+00:00:01 Reading GFF3 data file  : '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff'
+00:00:01 Reading file '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff'
+WARNING_TRANSCRIPT_NOT_FOUND: Cannot find transcript 'TRANSCRIPT_id-NC_045512.2:1..265'. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 9	'NC_045512.2	RefSeq	five_prime_UTR	1	265	.	+	.	ID=id-NC_045512.2:1..265;gbkey=5'UTR'
+WARNING_CANNOT_ADD_UTR: Could not add UTR. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 9	'NC_045512.2	RefSeq	five_prime_UTR	1	265	.	+	.	ID=id-NC_045512.2:1..265;gbkey=5'UTR'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp01' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp01' for NC_045512.2	RefSeq	CDS	265	13467	+
+	dbxref : GenBank:YP_009724389.1,GeneID:43740578
+	exception : ribosomal slippage
+	gbkey : CDS
+	gene : ORF1ab
+	id : cds-YP_009724389.1
+	locus_tag : GU280_gp01
+	name : YP_009724389.1
+	note : pp1ab%3B translated by -1 ribosomal frameshift
+	parent : gene-GU280_gp01
+	product : ORF1ab polyprotein
+	protein_id : YP_009724389.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 11	'NC_045512.2	RefSeq	CDS	266	13468	.	+	0	ID=cds-YP_009724389.1;Parent=gene-GU280_gp01;Dbxref=GenBank:YP_009724389.1,GeneID:43740578;Name=YP_009724389.1;Note=pp1ab%3B translated by -1 ribosomal frameshift;exception=ribosomal slippage;gbkey=CDS;gene=ORF1ab;locus_tag=GU280_gp01;product=ORF1ab polyprotein;protein_id=YP_009724389.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp02' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp02' for NC_045512.2	RefSeq	CDS	21562	25383	+
+	dbxref : GenBank:YP_009724390.1,GeneID:43740568
+	gbkey : CDS
+	gene : S
+	id : cds-YP_009724390.1
+	locus_tag : GU280_gp02
+	name : YP_009724390.1
+	note : structural protein%3B spike protein
+	parent : gene-GU280_gp02
+	product : surface glycoprotein
+	protein_id : YP_009724390.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 44	'NC_045512.2	RefSeq	CDS	21563	25384	.	+	0	ID=cds-YP_009724390.1;Parent=gene-GU280_gp02;Dbxref=GenBank:YP_009724390.1,GeneID:43740568;Name=YP_009724390.1;Note=structural protein%3B spike protein;gbkey=CDS;gene=S;locus_tag=GU280_gp02;product=surface glycoprotein;protein_id=YP_009724390.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp03' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp03' for NC_045512.2	RefSeq	CDS	25392	26219	+
+	dbxref : GenBank:YP_009724391.1,GeneID:43740569
+	gbkey : CDS
+	gene : ORF3a
+	id : cds-YP_009724391.1
+	locus_tag : GU280_gp03
+	name : YP_009724391.1
+	parent : gene-GU280_gp03
+	product : ORF3a protein
+	protein_id : YP_009724391.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 46	'NC_045512.2	RefSeq	CDS	25393	26220	.	+	0	ID=cds-YP_009724391.1;Parent=gene-GU280_gp03;Dbxref=GenBank:YP_009724391.1,GeneID:43740569;Name=YP_009724391.1;gbkey=CDS;gene=ORF3a;locus_tag=GU280_gp03;product=ORF3a protein;protein_id=YP_009724391.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp04' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp04' for NC_045512.2	RefSeq	CDS	26244	26471	+
+	dbxref : GenBank:YP_009724392.1,GeneID:43740570
+	gbkey : CDS
+	gene : E
+	id : cds-YP_009724392.1
+	locus_tag : GU280_gp04
+	name : YP_009724392.1
+	note : ORF4%3B structural protein%3B E protein
+	parent : gene-GU280_gp04
+	product : envelope protein
+	protein_id : YP_009724392.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 48	'NC_045512.2	RefSeq	CDS	26245	26472	.	+	0	ID=cds-YP_009724392.1;Parent=gene-GU280_gp04;Dbxref=GenBank:YP_009724392.1,GeneID:43740570;Name=YP_009724392.1;Note=ORF4%3B structural protein%3B E protein;gbkey=CDS;gene=E;locus_tag=GU280_gp04;product=envelope protein;protein_id=YP_009724392.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp05' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp05' for NC_045512.2	RefSeq	CDS	26522	27190	+
+	dbxref : GenBank:YP_009724393.1,GeneID:43740571
+	gbkey : CDS
+	gene : M
+	id : cds-YP_009724393.1
+	locus_tag : GU280_gp05
+	name : YP_009724393.1
+	note : ORF5%3B structural protein
+	parent : gene-GU280_gp05
+	product : membrane glycoprotein
+	protein_id : YP_009724393.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 50	'NC_045512.2	RefSeq	CDS	26523	27191	.	+	0	ID=cds-YP_009724393.1;Parent=gene-GU280_gp05;Dbxref=GenBank:YP_009724393.1,GeneID:43740571;Name=YP_009724393.1;Note=ORF5%3B structural protein;gbkey=CDS;gene=M;locus_tag=GU280_gp05;product=membrane glycoprotein;protein_id=YP_009724393.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp06' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp06' for NC_045512.2	RefSeq	CDS	27201	27386	+
+	dbxref : GenBank:YP_009724394.1,GeneID:43740572
+	gbkey : CDS
+	gene : ORF6
+	id : cds-YP_009724394.1
+	locus_tag : GU280_gp06
+	name : YP_009724394.1
+	parent : gene-GU280_gp06
+	product : ORF6 protein
+	protein_id : YP_009724394.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 52	'NC_045512.2	RefSeq	CDS	27202	27387	.	+	0	ID=cds-YP_009724394.1;Parent=gene-GU280_gp06;Dbxref=GenBank:YP_009724394.1,GeneID:43740572;Name=YP_009724394.1;gbkey=CDS;gene=ORF6;locus_tag=GU280_gp06;product=ORF6 protein;protein_id=YP_009724394.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp07' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp07' for NC_045512.2	RefSeq	CDS	27393	27758	+
+	dbxref : GenBank:YP_009724395.1,GeneID:43740573
+	gbkey : CDS
+	gene : ORF7a
+	id : cds-YP_009724395.1
+	locus_tag : GU280_gp07
+	name : YP_009724395.1
+	parent : gene-GU280_gp07
+	product : ORF7a protein
+	protein_id : YP_009724395.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 54	'NC_045512.2	RefSeq	CDS	27394	27759	.	+	0	ID=cds-YP_009724395.1;Parent=gene-GU280_gp07;Dbxref=GenBank:YP_009724395.1,GeneID:43740573;Name=YP_009724395.1;gbkey=CDS;gene=ORF7a;locus_tag=GU280_gp07;product=ORF7a protein;protein_id=YP_009724395.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp08' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp08' for NC_045512.2	RefSeq	CDS	27755	27886	+
+	dbxref : GenBank:YP_009725318.1,GeneID:43740574
+	gbkey : CDS
+	gene : ORF7b
+	id : cds-YP_009725318.1
+	locus_tag : GU280_gp08
+	name : YP_009725318.1
+	parent : gene-GU280_gp08
+	product : ORF7b
+	protein_id : YP_009725318.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 56	'NC_045512.2	RefSeq	CDS	27756	27887	.	+	0	ID=cds-YP_009725318.1;Parent=gene-GU280_gp08;Dbxref=GenBank:YP_009725318.1,GeneID:43740574;Name=YP_009725318.1;gbkey=CDS;gene=ORF7b;locus_tag=GU280_gp08;product=ORF7b;protein_id=YP_009725318.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp09' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp09' for NC_045512.2	RefSeq	CDS	27893	28258	+
+	dbxref : GenBank:YP_009724396.1,GeneID:43740577
+	gbkey : CDS
+	gene : ORF8
+	id : cds-YP_009724396.1
+	locus_tag : GU280_gp09
+	name : YP_009724396.1
+	parent : gene-GU280_gp09
+	product : ORF8 protein
+	protein_id : YP_009724396.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 58	'NC_045512.2	RefSeq	CDS	27894	28259	.	+	0	ID=cds-YP_009724396.1;Parent=gene-GU280_gp09;Dbxref=GenBank:YP_009724396.1,GeneID:43740577;Name=YP_009724396.1;gbkey=CDS;gene=ORF8;locus_tag=GU280_gp09;product=ORF8 protein;protein_id=YP_009724396.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp10' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp10' for NC_045512.2	RefSeq	CDS	28273	29532	+
+	dbxref : GenBank:YP_009724397.2,GeneID:43740575
+	gbkey : CDS
+	gene : N
+	id : cds-YP_009724397.2
+	locus_tag : GU280_gp10
+	name : YP_009724397.2
+	note : ORF9%3B structural protein
+	parent : gene-GU280_gp10
+	product : nucleocapsid phosphoprotein
+	protein_id : YP_009724397.2
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 60	'NC_045512.2	RefSeq	CDS	28274	29533	.	+	0	ID=cds-YP_009724397.2;Parent=gene-GU280_gp10;Dbxref=GenBank:YP_009724397.2,GeneID:43740575;Name=YP_009724397.2;Note=ORF9%3B structural protein;gbkey=CDS;gene=N;locus_tag=GU280_gp10;product=nucleocapsid phosphoprotein;protein_id=YP_009724397.2'
+WARNING_TRANSCRIPT_NOT_FOUND: Exon's parent 'gene-GU280_gp11' is a Gene instead of a transcript. Created transcript 'TRANSCRIPT_gene-GU280_gp11' for NC_045512.2	RefSeq	CDS	29557	29673	+
+	dbxref : GenBank:YP_009725255.1,GeneID:43740576
+	gbkey : CDS
+	gene : ORF10
+	id : cds-YP_009725255.1
+	locus_tag : GU280_gp11
+	name : YP_009725255.1
+	parent : gene-GU280_gp11
+	product : ORF10 protein
+	protein_id : YP_009725255.1
+	source : RefSeq
+	type : CDS
+. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 62	'NC_045512.2	RefSeq	CDS	29558	29674	.	+	0	ID=cds-YP_009725255.1;Parent=gene-GU280_gp11;Dbxref=GenBank:YP_009725255.1,GeneID:43740576;Name=YP_009725255.1;gbkey=CDS;gene=ORF10;locus_tag=GU280_gp11;product=ORF10 protein;protein_id=YP_009725255.1'
+WARNING_TRANSCRIPT_NOT_FOUND: Cannot find transcript 'TRANSCRIPT_id-NC_045512.2:29675..29903'. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 65	'NC_045512.2	RefSeq	three_prime_UTR	29675	29903	.	+	.	ID=id-NC_045512.2:29675..29903;gbkey=3'UTR'
+WARNING_CANNOT_ADD_UTR: Could not add UTR. File '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/genes.gff' line 65	'NC_045512.2	RefSeq	three_prime_UTR	29675	29903	.	+	.	ID=id-NC_045512.2:29675..29903;gbkey=3'UTR'
+00:00:01 
+	Total: 11 markers added.
+00:00:01 Create exons from CDS (if needed): 
+00:00:01 Exons created for 11 transcripts.
+00:00:01 Deleting redundant exons (if needed): 
+.
+		0	00:00:01 	Total transcripts with deleted exons: 1
+00:00:01 Collapsing zero length introns (if needed): 
+.
+		0	00:00:01 	Total collapsed transcripts: 1
+00:00:01 	Reading sequences   :
+00:00:01 	FASTA file: '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/genomes/sars_cov_2.fa' not found.
+00:00:01 	Reading FASTA file: '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/sequences.fa'
+00:00:01 		Reading sequence 'NC_045512.2', length: 29903
+00:00:01 		Adding genomic sequences to genes: 
+00:00:01 	Done (10 sequences added).
+00:00:01 		Adding genomic sequences to exons: 
+00:00:01 	Done (11 sequences added, 0 ignored).
+00:00:01 	Total: 11 sequences added, 0 sequences ignored.
+00:00:01 Finishing up genome
+00:00:01 Adjusting transcripts: 
+00:00:01 Adjusting genes: 
+00:00:01 Adjusting chromosomes lengths: 
+00:00:01 Ranking exons: 
+00:00:01 Create UTRs from CDS (if needed): 
+00:00:01 Correcting exons based on frame information.
+	
+WARNING_FRAMES_ZERO: All frames are zero! This seems rather odd, please check that 'frame' information in your 'genes' file is accurate.
+00:00:01 
+00:00:01 Remove empty chromosomes: 
+00:00:01 Marking as 'coding' from CDS information: 
+00:00:01 Done: 0 transcripts marked
+00:00:01 
+00:00:01 #-----------------------------------------------
+# Genome name                : 'sars_cov_2'
+# Genome version             : 'sars_cov_2'
+# Genome ID                  : 'sars_cov_2[0]'
+# Has protein coding info    : true
+# Has Tr. Support Level info : true
+# Genes                      : 11
+# Protein coding genes       : 11
+#-----------------------------------------------
+# Transcripts                : 11
+# Avg. transcripts per gene  : 1.00
+# TSL transcripts            : 0
+#-----------------------------------------------
+# Checked transcripts        : 
+#               AA sequences :      0 ( 0.00% )
+#              DNA sequences :      0 ( 0.00% )
+#-----------------------------------------------
+# Protein coding transcripts : 11
+#              Length errors :      1 ( 9.09% )
+#  STOP codons in CDS errors :      1 ( 9.09% )
+#         START codon errors :      0 ( 0.00% )
+#        STOP codon warnings :      0 ( 0.00% )
+#              UTR sequences :      0 ( 0.00% )
+#               Total Errors :      1 ( 9.09% )
+# WARNING                    : No protein coding transcript has UTR
+#-----------------------------------------------
+# Cds                        : 11
+# Exons                      : 11
+# Exons with sequence        : 11
+# Exons without sequence     : 0
+# Avg. exons per transcript  : 1.00
+#-----------------------------------------------
+# Number of chromosomes      : 1
+# Chromosomes                : Format 'chromo_name size codon_table'
+#		'NC_045512.2'	29903	Standard
+#-----------------------------------------------
+
+00:00:01 Caracterizing exons by splicing (stage 1) : 
+
+00:00:01 Caracterizing exons by splicing (stage 2) : 
+00:00:01 done.
+00:00:01 [Optional] Rare amino acid annotations
+WARNING_FILE_NOT_FOUND: Rare Amino Acid analysis: Cannot read protein sequence file '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/protein.fa', nothing done.
+ERROR: CDS check file '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/cds.fa' not found.
+ERROR: Protein check file '/home/kanishk/miniconda3/envs/wgs_pipeline/share/snpeff-5.4.0c-0/./data/sars_cov_2/protein.fa' not found.
+ERROR: Database check failed.
+00:00:01 Done.
+
+2026-06-05 08:44:21,653 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:44:21,654 [INFO] Verifying input file existence...
+2026-06-05 08:44:21,654 [INFO] All input files located successfully.
+2026-06-05 08:44:21,654 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:44:38,065 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.41s
+2026-06-05 08:44:38,065 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 08:44:38,306 [INFO] SUCCESS: BAM spatial file indexing completed in 0.24s
+2026-06-05 08:44:38,307 [INFO] STARTING: Bcftools variant calling and quality filtering
+2026-06-05 08:44:48,110 [INFO] SUCCESS: Bcftools variant calling and quality filtering completed in 9.80s
+2026-06-05 08:44:48,153 [INFO] STARTING: Building custom SnpEff database for sars_cov_2
+2026-06-05 08:44:49,698 [INFO] SUCCESS: Building custom SnpEff database for sars_cov_2 completed in 1.54s
+2026-06-05 08:44:49,700 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 08:44:52,328 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.63s
+2026-06-05 08:44:52,328 [INFO] ==================================================
+2026-06-05 08:44:52,328 [INFO] Viral amplicon processing cycle executed successfully.
+2026-06-05 08:44:52,328 [INFO] Final annotated results file generated at: results/sars_cov_2_mutations_annotated.vcf
+2026-06-05 08:44:52,328 [INFO] ==================================================
+2026-06-05 08:58:39,987 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 08:58:39,988 [INFO] Verifying input file existence...
+2026-06-05 08:58:39,988 [INFO] All input files located successfully.
+2026-06-05 08:58:39,988 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 08:58:56,870 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.88s
+2026-06-05 08:58:56,871 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 08:58:57,116 [INFO] SUCCESS: BAM spatial file indexing completed in 0.25s
+2026-06-05 08:58:57,117 [INFO] STARTING: Bcftools variant calling and quality filtering
+2026-06-05 08:59:06,943 [INFO] SUCCESS: Bcftools variant calling and quality filtering completed in 9.83s
+2026-06-05 08:59:06,984 [INFO] STARTING: Building custom SnpEff database for sars_cov_2
+2026-06-05 08:59:08,540 [INFO] SUCCESS: Building custom SnpEff database for sars_cov_2 completed in 1.56s
+2026-06-05 08:59:08,541 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 08:59:11,104 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.56s
+2026-06-05 09:11:49,460 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 09:11:49,460 [INFO] Verifying input file existence...
+2026-06-05 09:11:49,460 [ERROR] Required input file missing: data/sample_B.fastq.gz
+2026-06-05 09:12:08,212 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 09:12:08,212 [INFO] Verifying input file existence...
+2026-06-05 09:12:08,212 [INFO] All input files located successfully.
+2026-06-05 09:12:08,212 [INFO] STARTING: Generating Minimap2 index cache (sars_cov_2.mmi)
+2026-06-05 09:12:08,226 [INFO] SUCCESS: Generating Minimap2 index cache (sars_cov_2.mmi) completed in 0.01s
+2026-06-05 09:12:08,226 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 09:12:24,569 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.34s
+2026-06-05 09:12:24,570 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 09:12:24,805 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-05 09:12:24,805 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 09:12:34,614 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.81s
+2026-06-05 09:12:34,615 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 09:12:34,615 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 09:12:37,402 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.79s
+2026-06-05 09:25:25,276 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 09:25:25,276 [INFO] Verifying input file existence...
+2026-06-05 09:25:25,277 [INFO] All input files located successfully.
+2026-06-05 09:25:25,277 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 09:25:35,982 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 10.70s
+2026-06-05 09:25:35,982 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 09:25:36,237 [INFO] SUCCESS: BAM spatial file indexing completed in 0.25s
+2026-06-05 09:25:36,237 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 09:25:49,361 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 13.12s
+2026-06-05 09:25:49,361 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 09:25:49,362 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 09:25:51,958 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.60s
+2026-06-05 10:47:29,186 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 10:47:29,186 [INFO] Verifying input file existence...
+2026-06-05 10:47:29,186 [INFO] All input files located successfully.
+2026-06-05 10:47:29,186 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 10:47:38,961 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.77s
+2026-06-05 10:47:38,961 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 10:47:39,084 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-05 10:47:39,084 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 10:47:49,137 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 10.05s
+2026-06-05 10:47:49,138 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 10:47:49,138 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 10:47:51,701 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.56s
+2026-06-05 10:58:48,124 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 10:58:48,124 [INFO] Verifying input file existence...
+2026-06-05 10:58:48,124 [INFO] All input files located successfully.
+2026-06-05 10:58:48,124 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 10:58:56,238 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.11s
+2026-06-05 10:58:56,238 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 10:58:56,348 [INFO] SUCCESS: BAM spatial file indexing completed in 0.11s
+2026-06-05 10:58:56,348 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 10:59:03,354 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.01s
+2026-06-05 10:59:03,354 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 10:59:03,354 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 10:59:06,014 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.66s
+2026-06-05 11:19:53,215 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:19:53,215 [INFO] Verifying input file existence...
+2026-06-05 11:19:53,215 [INFO] All input files located successfully.
+2026-06-05 11:19:53,215 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:19:56,952 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 3.74s
+2026-06-05 11:19:56,952 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:19:57,016 [INFO] SUCCESS: BAM spatial file indexing completed in 0.06s
+2026-06-05 11:19:57,016 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:20:18,263 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 21.25s
+2026-06-05 11:20:18,264 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:20:18,265 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:20:20,472 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.21s
+2026-06-05 11:20:20,551 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:20:20,551 [INFO] Verifying input file existence...
+2026-06-05 11:20:20,551 [INFO] All input files located successfully.
+2026-06-05 11:20:20,551 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:20:29,030 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.48s
+2026-06-05 11:20:29,031 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:20:29,204 [INFO] SUCCESS: BAM spatial file indexing completed in 0.17s
+2026-06-05 11:20:29,204 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:20:46,561 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 17.36s
+2026-06-05 11:20:46,561 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:20:46,562 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:20:48,731 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.17s
+2026-06-05 11:20:48,789 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:20:48,789 [INFO] Verifying input file existence...
+2026-06-05 11:20:48,789 [INFO] All input files located successfully.
+2026-06-05 11:20:48,789 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:21:33,634 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 44.84s
+2026-06-05 11:21:33,635 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:21:34,195 [INFO] SUCCESS: BAM spatial file indexing completed in 0.56s
+2026-06-05 11:21:34,195 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:21:43,589 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.39s
+2026-06-05 11:21:43,590 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:21:43,590 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:21:46,206 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.62s
+2026-06-05 11:21:46,272 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:21:46,272 [INFO] Verifying input file existence...
+2026-06-05 11:21:46,272 [INFO] All input files located successfully.
+2026-06-05 11:21:46,273 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:22:02,657 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.38s
+2026-06-05 11:22:02,658 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:22:02,873 [INFO] SUCCESS: BAM spatial file indexing completed in 0.22s
+2026-06-05 11:22:02,874 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:22:10,658 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.78s
+2026-06-05 11:22:10,658 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:22:10,658 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:22:13,020 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.36s
+2026-06-05 11:22:13,095 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:22:13,095 [INFO] Verifying input file existence...
+2026-06-05 11:22:13,096 [INFO] All input files located successfully.
+2026-06-05 11:22:13,096 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:22:21,883 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.79s
+2026-06-05 11:22:21,883 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:22:22,067 [INFO] SUCCESS: BAM spatial file indexing completed in 0.18s
+2026-06-05 11:22:22,068 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:22:43,303 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 21.24s
+2026-06-05 11:22:43,304 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:22:43,305 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:22:45,692 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.39s
+2026-06-05 11:22:45,764 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:22:45,764 [INFO] Verifying input file existence...
+2026-06-05 11:22:45,764 [INFO] All input files located successfully.
+2026-06-05 11:22:45,764 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:22:53,946 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.18s
+2026-06-05 11:22:53,947 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:22:54,044 [INFO] SUCCESS: BAM spatial file indexing completed in 0.10s
+2026-06-05 11:22:54,045 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:23:00,892 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 6.85s
+2026-06-05 11:23:00,893 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:23:00,893 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:23:03,274 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.38s
+2026-06-05 11:23:03,342 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:23:03,342 [INFO] Verifying input file existence...
+2026-06-05 11:23:03,342 [INFO] All input files located successfully.
+2026-06-05 11:23:03,343 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:23:10,362 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 7.02s
+2026-06-05 11:23:10,362 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:23:10,443 [INFO] SUCCESS: BAM spatial file indexing completed in 0.08s
+2026-06-05 11:23:10,443 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:23:17,402 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 6.96s
+2026-06-05 11:23:17,403 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:23:17,403 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:23:19,764 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.36s
+2026-06-05 11:23:19,838 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:23:19,839 [INFO] Verifying input file existence...
+2026-06-05 11:23:19,839 [INFO] All input files located successfully.
+2026-06-05 11:23:19,839 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:23:29,173 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.33s
+2026-06-05 11:23:29,173 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:23:29,298 [INFO] SUCCESS: BAM spatial file indexing completed in 0.13s
+2026-06-05 11:23:29,298 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:23:39,134 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.84s
+2026-06-05 11:23:39,135 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:23:39,135 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:23:41,593 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.46s
+2026-06-05 11:23:41,650 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:23:41,650 [INFO] Verifying input file existence...
+2026-06-05 11:23:41,651 [INFO] All input files located successfully.
+2026-06-05 11:23:41,651 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:23:57,120 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 15.47s
+2026-06-05 11:23:57,120 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:23:57,331 [INFO] SUCCESS: BAM spatial file indexing completed in 0.21s
+2026-06-05 11:23:57,331 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:24:06,660 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.33s
+2026-06-05 11:24:06,661 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:24:06,661 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:24:09,049 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.39s
+2026-06-05 11:24:09,109 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:24:09,109 [INFO] Verifying input file existence...
+2026-06-05 11:24:09,110 [INFO] All input files located successfully.
+2026-06-05 11:24:09,110 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:24:18,873 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.76s
+2026-06-05 11:24:18,874 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:24:18,996 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-05 11:24:18,996 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:24:31,776 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 12.78s
+2026-06-05 11:24:31,776 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:24:31,776 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:24:34,318 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.54s
+2026-06-05 11:38:17,139 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:38:17,139 [INFO] Verifying input file existence...
+2026-06-05 11:38:17,139 [INFO] All input files located successfully.
+2026-06-05 11:38:17,140 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:38:21,005 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 3.87s
+2026-06-05 11:38:21,006 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:38:21,089 [INFO] SUCCESS: BAM spatial file indexing completed in 0.08s
+2026-06-05 11:38:21,089 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:38:43,077 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 21.99s
+2026-06-05 11:38:43,078 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:38:43,078 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:38:45,574 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.50s
+2026-06-05 11:38:45,644 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:38:45,644 [INFO] Verifying input file existence...
+2026-06-05 11:38:45,645 [INFO] All input files located successfully.
+2026-06-05 11:38:45,645 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:38:54,158 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.51s
+2026-06-05 11:38:54,158 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:38:54,311 [INFO] SUCCESS: BAM spatial file indexing completed in 0.15s
+2026-06-05 11:38:54,311 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:39:11,288 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 16.98s
+2026-06-05 11:39:11,288 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:39:11,289 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:39:13,683 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.39s
+2026-06-05 11:39:13,752 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:39:13,753 [INFO] Verifying input file existence...
+2026-06-05 11:39:13,753 [INFO] All input files located successfully.
+2026-06-05 11:39:13,753 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:39:57,850 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 44.10s
+2026-06-05 11:39:57,851 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:39:58,348 [INFO] SUCCESS: BAM spatial file indexing completed in 0.50s
+2026-06-05 11:39:58,349 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:40:07,775 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.43s
+2026-06-05 11:40:07,775 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:40:07,775 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:40:10,200 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.42s
+2026-06-05 11:40:10,302 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:40:10,302 [INFO] Verifying input file existence...
+2026-06-05 11:40:10,302 [INFO] All input files located successfully.
+2026-06-05 11:40:10,302 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:40:26,757 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.45s
+2026-06-05 11:40:26,757 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:40:26,991 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-05 11:40:26,991 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:40:34,889 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.90s
+2026-06-05 11:40:34,890 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:40:34,890 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:40:37,324 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.43s
+2026-06-05 11:40:37,404 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:40:37,404 [INFO] Verifying input file existence...
+2026-06-05 11:40:37,404 [INFO] All input files located successfully.
+2026-06-05 11:40:37,404 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:40:45,622 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.22s
+2026-06-05 11:40:45,622 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:40:45,738 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-05 11:40:45,738 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:41:08,156 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 22.42s
+2026-06-05 11:41:08,157 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:41:08,157 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:41:10,757 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.60s
+2026-06-05 11:41:10,822 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:41:10,822 [INFO] Verifying input file existence...
+2026-06-05 11:41:10,823 [INFO] All input files located successfully.
+2026-06-05 11:41:10,823 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:41:19,656 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.83s
+2026-06-05 11:41:19,656 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:41:19,779 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-05 11:41:19,779 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:41:27,006 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.23s
+2026-06-05 11:41:27,006 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:41:27,006 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:41:30,041 [INFO] SUCCESS: SnpEff functional variant annotation completed in 3.03s
+2026-06-05 11:41:30,113 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:41:30,113 [INFO] Verifying input file existence...
+2026-06-05 11:41:30,114 [INFO] All input files located successfully.
+2026-06-05 11:41:30,114 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:41:38,489 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.38s
+2026-06-05 11:41:38,489 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:41:38,571 [INFO] SUCCESS: BAM spatial file indexing completed in 0.08s
+2026-06-05 11:41:38,571 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:41:46,360 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.79s
+2026-06-05 11:41:46,360 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:41:46,360 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:41:49,037 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.68s
+2026-06-05 11:41:49,153 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:41:49,154 [INFO] Verifying input file existence...
+2026-06-05 11:41:49,154 [INFO] All input files located successfully.
+2026-06-05 11:41:49,154 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:41:59,265 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 10.11s
+2026-06-05 11:41:59,265 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:41:59,476 [INFO] SUCCESS: BAM spatial file indexing completed in 0.21s
+2026-06-05 11:41:59,476 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:42:09,328 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.85s
+2026-06-05 11:42:09,329 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:42:09,329 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:42:11,877 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.55s
+2026-06-05 11:42:11,957 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:42:11,957 [INFO] Verifying input file existence...
+2026-06-05 11:42:11,957 [INFO] All input files located successfully.
+2026-06-05 11:42:11,957 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:42:28,632 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.67s
+2026-06-05 11:42:28,633 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:42:28,918 [INFO] SUCCESS: BAM spatial file indexing completed in 0.29s
+2026-06-05 11:42:28,919 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:42:38,547 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.63s
+2026-06-05 11:42:38,548 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:42:38,548 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:42:41,019 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.47s
+2026-06-05 11:42:41,093 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 11:42:41,093 [INFO] Verifying input file existence...
+2026-06-05 11:42:41,093 [INFO] All input files located successfully.
+2026-06-05 11:42:41,094 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 11:42:51,279 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 10.19s
+2026-06-05 11:42:51,279 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 11:42:51,409 [INFO] SUCCESS: BAM spatial file indexing completed in 0.13s
+2026-06-05 11:42:51,409 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 11:43:04,563 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 13.15s
+2026-06-05 11:43:04,563 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 11:43:04,564 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 11:43:07,176 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.61s
+2026-06-05 16:02:08,646 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:02:08,647 [INFO] Verifying input file existence...
+2026-06-05 16:02:08,647 [ERROR] Required input file missing: data/my_nanopore_reads.fastq.gz
+2026-06-05 16:13:24,719 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:13:24,719 [INFO] Verifying input file existence...
+2026-06-05 16:13:24,720 [INFO] All input files located successfully.
+2026-06-05 16:13:24,720 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:13:28,694 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 3.97s
+2026-06-05 16:13:28,694 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:13:28,775 [INFO] SUCCESS: BAM spatial file indexing completed in 0.08s
+2026-06-05 16:13:28,776 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:13:52,151 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 23.37s
+2026-06-05 16:13:52,151 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:13:52,151 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:13:55,564 [INFO] SUCCESS: SnpEff functional variant annotation completed in 3.41s
+2026-06-05 16:13:55,698 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:13:55,698 [INFO] Verifying input file existence...
+2026-06-05 16:13:55,698 [INFO] All input files located successfully.
+2026-06-05 16:13:55,698 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:14:05,385 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.69s
+2026-06-05 16:14:05,385 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:14:05,522 [INFO] SUCCESS: BAM spatial file indexing completed in 0.14s
+2026-06-05 16:14:05,522 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:14:24,150 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 18.63s
+2026-06-05 16:14:24,151 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:14:24,151 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:14:26,797 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.65s
+2026-06-05 16:14:26,878 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:14:26,878 [INFO] Verifying input file existence...
+2026-06-05 16:14:26,878 [INFO] All input files located successfully.
+2026-06-05 16:14:26,878 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:15:14,154 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 47.28s
+2026-06-05 16:15:14,156 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:15:14,704 [INFO] SUCCESS: BAM spatial file indexing completed in 0.55s
+2026-06-05 16:15:14,704 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:15:24,482 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.78s
+2026-06-05 16:15:24,485 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:15:24,485 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:15:27,460 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.98s
+2026-06-05 16:15:27,566 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:15:27,566 [INFO] Verifying input file existence...
+2026-06-05 16:15:27,566 [INFO] All input files located successfully.
+2026-06-05 16:15:27,566 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:15:46,270 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 18.70s
+2026-06-05 16:15:46,270 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:15:46,638 [INFO] SUCCESS: BAM spatial file indexing completed in 0.37s
+2026-06-05 16:15:46,638 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:15:55,305 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 8.67s
+2026-06-05 16:15:55,305 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:15:55,306 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:15:58,323 [INFO] SUCCESS: SnpEff functional variant annotation completed in 3.02s
+2026-06-05 16:15:58,414 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:15:58,414 [INFO] Verifying input file existence...
+2026-06-05 16:15:58,414 [INFO] All input files located successfully.
+2026-06-05 16:15:58,415 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:16:07,006 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.59s
+2026-06-05 16:16:07,006 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:16:07,135 [INFO] SUCCESS: BAM spatial file indexing completed in 0.13s
+2026-06-05 16:16:07,135 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:16:31,016 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 23.88s
+2026-06-05 16:16:31,017 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:16:31,017 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:16:33,880 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.86s
+2026-06-05 16:16:33,987 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:16:33,988 [INFO] Verifying input file existence...
+2026-06-05 16:16:33,988 [INFO] All input files located successfully.
+2026-06-05 16:16:33,988 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:16:43,071 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.08s
+2026-06-05 16:16:43,072 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:16:43,185 [INFO] SUCCESS: BAM spatial file indexing completed in 0.11s
+2026-06-05 16:16:43,185 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:16:51,319 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 8.13s
+2026-06-05 16:16:51,319 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:16:51,320 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:16:54,164 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.84s
+2026-06-05 16:16:54,253 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:16:54,253 [INFO] Verifying input file existence...
+2026-06-05 16:16:54,254 [INFO] All input files located successfully.
+2026-06-05 16:16:54,254 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:17:03,125 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.87s
+2026-06-05 16:17:03,125 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:17:03,234 [INFO] SUCCESS: BAM spatial file indexing completed in 0.11s
+2026-06-05 16:17:03,234 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:17:13,065 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.83s
+2026-06-05 16:17:13,066 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:17:13,069 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:17:17,138 [INFO] SUCCESS: SnpEff functional variant annotation completed in 4.07s
+2026-06-05 16:17:17,213 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:17:17,213 [INFO] Verifying input file existence...
+2026-06-05 16:17:17,213 [INFO] All input files located successfully.
+2026-06-05 16:17:17,213 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:17:28,226 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 11.01s
+2026-06-05 16:17:28,226 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:17:28,401 [INFO] SUCCESS: BAM spatial file indexing completed in 0.17s
+2026-06-05 16:17:28,402 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:17:39,157 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 10.76s
+2026-06-05 16:17:39,158 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:17:39,158 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:17:41,976 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.82s
+2026-06-05 16:17:42,058 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:17:42,058 [INFO] Verifying input file existence...
+2026-06-05 16:17:42,058 [INFO] All input files located successfully.
+2026-06-05 16:17:42,058 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:18:01,005 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 18.95s
+2026-06-05 16:18:01,005 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:18:01,230 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-05 16:18:01,230 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:18:11,001 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.77s
+2026-06-05 16:18:11,002 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:18:11,002 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:18:13,455 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.45s
+2026-06-05 16:18:13,533 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-05 16:18:13,533 [INFO] Verifying input file existence...
+2026-06-05 16:18:13,533 [INFO] All input files located successfully.
+2026-06-05 16:18:13,533 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-05 16:18:23,962 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 10.43s
+2026-06-05 16:18:23,963 [INFO] STARTING: BAM spatial file indexing
+2026-06-05 16:18:24,131 [INFO] SUCCESS: BAM spatial file indexing completed in 0.17s
+2026-06-05 16:18:24,132 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-05 16:18:36,980 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 12.85s
+2026-06-05 16:18:36,981 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-05 16:18:36,981 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-05 16:18:39,713 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.73s
+2026-06-06 15:27:38,454 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:27:38,454 [INFO] Verifying input file existence...
+2026-06-06 15:27:38,455 [INFO] All input files located successfully.
+2026-06-06 15:27:38,455 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:27:42,565 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 4.11s
+2026-06-06 15:27:42,565 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:27:42,644 [INFO] SUCCESS: BAM spatial file indexing completed in 0.08s
+2026-06-06 15:27:42,645 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:28:03,774 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 21.13s
+2026-06-06 15:28:03,776 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:28:03,777 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:28:06,550 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.77s
+2026-06-06 15:28:06,634 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:28:06,634 [INFO] Verifying input file existence...
+2026-06-06 15:28:06,634 [INFO] All input files located successfully.
+2026-06-06 15:28:06,634 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:28:14,798 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.16s
+2026-06-06 15:28:14,799 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:28:14,913 [INFO] SUCCESS: BAM spatial file indexing completed in 0.11s
+2026-06-06 15:28:14,913 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:28:31,546 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 16.63s
+2026-06-06 15:28:31,547 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:28:31,547 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:28:33,827 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.28s
+2026-06-06 15:28:33,912 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:28:33,912 [INFO] Verifying input file existence...
+2026-06-06 15:28:33,912 [INFO] All input files located successfully.
+2026-06-06 15:28:33,912 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:29:16,093 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 42.18s
+2026-06-06 15:29:16,094 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:29:16,592 [INFO] SUCCESS: BAM spatial file indexing completed in 0.50s
+2026-06-06 15:29:16,593 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:29:25,711 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.12s
+2026-06-06 15:29:25,712 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:29:25,712 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:29:28,219 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.51s
+2026-06-06 15:29:28,304 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:29:28,304 [INFO] Verifying input file existence...
+2026-06-06 15:29:28,304 [INFO] All input files located successfully.
+2026-06-06 15:29:28,305 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:29:44,182 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 15.88s
+2026-06-06 15:29:44,182 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:29:44,397 [INFO] SUCCESS: BAM spatial file indexing completed in 0.21s
+2026-06-06 15:29:44,397 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:29:52,055 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 7.66s
+2026-06-06 15:29:52,056 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:29:52,056 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:29:54,426 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.37s
+2026-06-06 15:29:54,495 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:29:54,495 [INFO] Verifying input file existence...
+2026-06-06 15:29:54,495 [INFO] All input files located successfully.
+2026-06-06 15:29:54,495 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:30:02,346 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 7.85s
+2026-06-06 15:30:02,346 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:30:02,460 [INFO] SUCCESS: BAM spatial file indexing completed in 0.11s
+2026-06-06 15:30:02,460 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:30:23,378 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 20.92s
+2026-06-06 15:30:23,378 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:30:23,378 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:30:25,849 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.47s
+2026-06-06 15:30:25,929 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:30:25,929 [INFO] Verifying input file existence...
+2026-06-06 15:30:25,929 [INFO] All input files located successfully.
+2026-06-06 15:30:25,929 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:30:34,081 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 8.15s
+2026-06-06 15:30:34,081 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:30:34,185 [INFO] SUCCESS: BAM spatial file indexing completed in 0.10s
+2026-06-06 15:30:34,185 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:30:41,076 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 6.89s
+2026-06-06 15:30:41,077 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:30:41,077 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:30:43,456 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.38s
+2026-06-06 15:30:43,528 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:30:43,528 [INFO] Verifying input file existence...
+2026-06-06 15:30:43,528 [INFO] All input files located successfully.
+2026-06-06 15:30:43,528 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:30:50,612 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 7.08s
+2026-06-06 15:30:50,613 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:30:50,704 [INFO] SUCCESS: BAM spatial file indexing completed in 0.09s
+2026-06-06 15:30:50,704 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:30:57,694 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 6.99s
+2026-06-06 15:30:57,695 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:30:57,695 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:31:00,144 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.45s
+2026-06-06 15:31:00,218 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:31:00,218 [INFO] Verifying input file existence...
+2026-06-06 15:31:00,218 [INFO] All input files located successfully.
+2026-06-06 15:31:00,218 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:31:09,470 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.25s
+2026-06-06 15:31:09,471 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:31:09,591 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-06 15:31:09,591 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:31:19,173 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.58s
+2026-06-06 15:31:19,173 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:31:19,173 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:31:21,634 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.46s
+2026-06-06 15:31:21,700 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:31:21,700 [INFO] Verifying input file existence...
+2026-06-06 15:31:21,701 [INFO] All input files located successfully.
+2026-06-06 15:31:21,701 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:31:37,275 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 15.57s
+2026-06-06 15:31:37,275 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:31:37,497 [INFO] SUCCESS: BAM spatial file indexing completed in 0.22s
+2026-06-06 15:31:37,497 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:31:46,859 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.36s
+2026-06-06 15:31:46,860 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:31:46,860 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:31:49,296 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.44s
+2026-06-06 15:31:49,384 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-06 15:31:49,385 [INFO] Verifying input file existence...
+2026-06-06 15:31:49,385 [INFO] All input files located successfully.
+2026-06-06 15:31:49,385 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-06 15:31:59,153 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 9.77s
+2026-06-06 15:31:59,153 [INFO] STARTING: BAM spatial file indexing
+2026-06-06 15:31:59,275 [INFO] SUCCESS: BAM spatial file indexing completed in 0.12s
+2026-06-06 15:31:59,275 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-06 15:32:11,965 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 12.69s
+2026-06-06 15:32:11,966 [INFO] SnpEff database for 'sars_cov_2' already exists. Skipping build step.
+2026-06-06 15:32:11,966 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-06 15:32:14,602 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.64s
+2026-06-13 00:46:08,468 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-13 00:46:08,468 [INFO] Verifying input file existence...
+2026-06-13 00:46:08,469 [INFO] All input files located successfully.
+2026-06-13 00:46:08,469 [INFO] STARTING: Samtools FASTA indexing
+2026-06-13 00:46:08,471 [ERROR] ERROR: Step failed during Samtools FASTA indexing
+2026-06-13 00:46:08,471 [ERROR] Exit code: 127
+2026-06-13 00:46:08,471 [ERROR] Error output:
+/bin/bash: line 1: samtools: command not found
+
+2026-06-13 00:46:59,283 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-13 00:46:59,283 [INFO] Verifying input file existence...
+2026-06-13 00:46:59,284 [INFO] All input files located successfully.
+2026-06-13 00:46:59,284 [INFO] STARTING: Samtools FASTA indexing
+2026-06-13 00:46:59,297 [INFO] SUCCESS: Samtools FASTA indexing completed in 0.01s
+2026-06-13 00:46:59,298 [INFO] STARTING: Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.mmi)
+2026-06-13 00:46:59,304 [ERROR] ERROR: Step failed during Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.mmi)
+2026-06-13 00:46:59,305 [ERROR] Exit code: 127
+2026-06-13 00:46:59,305 [ERROR] Error output:
+/bin/bash: line 1: minimap2: command not found
+
+2026-06-13 00:49:41,322 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-13 00:49:41,322 [INFO] Verifying input file existence...
+2026-06-13 00:49:41,322 [INFO] All input files located successfully.
+2026-06-13 00:49:41,322 [INFO] STARTING: Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.mmi)
+2026-06-13 00:49:41,338 [INFO] SUCCESS: Generating Minimap2 index cache (GCF_009858895.2_ASM985889v3_genomic.mmi) completed in 0.02s
+2026-06-13 00:49:41,339 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-13 00:49:57,864 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.53s
+2026-06-13 00:49:57,864 [INFO] STARTING: BAM spatial file indexing
+2026-06-13 00:49:58,092 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-13 00:49:58,092 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-13 00:50:07,830 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.74s
+2026-06-13 00:50:07,830 [ERROR] SnpEff executable not found in PATH. Ensure your conda environment is active.
+2026-06-13 00:51:35,932 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-13 00:51:35,932 [INFO] Verifying input file existence...
+2026-06-13 00:51:35,932 [INFO] All input files located successfully.
+2026-06-13 00:51:35,932 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-13 00:51:52,243 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.31s
+2026-06-13 00:51:52,243 [INFO] STARTING: BAM spatial file indexing
+2026-06-13 00:51:52,475 [INFO] SUCCESS: BAM spatial file indexing completed in 0.23s
+2026-06-13 00:51:52,475 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-13 00:52:02,166 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 9.69s
+2026-06-13 00:52:02,208 [INFO] Registering genomic entry 'GCF_009858895.2_ASM985889v3_genomic' in SnpEff configuration.
+2026-06-13 00:52:02,209 [INFO] STARTING: Building custom SnpEff database for GCF_009858895.2_ASM985889v3_genomic
+2026-06-13 00:52:03,780 [INFO] SUCCESS: Building custom SnpEff database for GCF_009858895.2_ASM985889v3_genomic completed in 1.57s
+2026-06-13 00:52:03,782 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-13 00:52:06,367 [INFO] SUCCESS: SnpEff functional variant annotation completed in 2.58s
+2026-06-15 08:18:16,190 [INFO] Starting automated viral Nanopore amplicon analysis pipeline.
+2026-06-15 08:18:16,190 [INFO] Verifying input file existence...
+2026-06-15 08:18:16,190 [INFO] All input files located successfully.
+2026-06-15 08:18:16,191 [INFO] STARTING: Minimap2 alignment and coordinate sorting
+2026-06-15 08:18:33,150 [INFO] SUCCESS: Minimap2 alignment and coordinate sorting completed in 16.96s
+2026-06-15 08:18:33,150 [INFO] STARTING: BAM spatial file indexing
+2026-06-15 08:18:33,373 [INFO] SUCCESS: BAM spatial file indexing completed in 0.22s
+2026-06-15 08:18:33,373 [INFO] STARTING: Bcftools multi-threaded variant calling and quality filtering
+2026-06-15 08:18:43,412 [INFO] SUCCESS: Bcftools multi-threaded variant calling and quality filtering completed in 10.04s
+2026-06-15 08:18:43,418 [INFO] SnpEff database for 'GCF_009858895.2_ASM985889v3_genomic' already exists. Skipping build step.
+2026-06-15 08:18:43,419 [INFO] STARTING: SnpEff functional variant annotation
+2026-06-15 08:18:46,466 [INFO] SUCCESS: SnpEff functional variant annotation completed in 3.05s
