@@ -6,9 +6,11 @@
     <title>OmniVariant Analytics Suite | Unified Edition</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-950 text-slate-100 h-screen font-sans antialiased overflow-hidden flex">
 
+    <!-- SIDEBAR PANEL -->
     <aside class="w-80 bg-slate-900 border-r border-slate-800/80 flex flex-col h-full z-20 shadow-2xl shrink-0">
         <div class="p-5 border-b border-slate-800/60 bg-slate-950/40 backdrop-blur-md">
             <h1 class="text-md font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-2.5">
@@ -20,26 +22,28 @@
 
         <div class="flex-1 overflow-y-auto p-5 space-y-6">
             
+            <!-- STEP 01: VCF FILE INPUT -->
             <div class="space-y-2">
                 <h2 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
                     <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-1.5 py-0.5 rounded text-[10px]">01</span> 
                     Source VCF Files
                 </h2>
-                <label class="block w-full border border-slate-800 bg-slate-950/40 hover:bg-slate-800/40 hover:border-indigo-500/40 transition-all duration-200 cursor-pointer rounded-xl p-4 text-center group relative border-dashed">
-                    <input type="file" id="vcf-files" accept="*" multiple class="hidden">
+                <label id="drop-zone" class="block w-full border border-slate-800 bg-slate-950/40 hover:bg-slate-800/40 hover:border-indigo-500/40 transition-all duration-200 cursor-pointer rounded-xl p-4 text-center group relative border-dashed">
+                    <input type="file" id="vcf-files" accept=".vcf,.vcf.gz,.txt" multiple class="hidden">
                     <span class="text-xs font-semibold text-slate-300 group-hover:text-indigo-400 transition">Select or Drop Files</span>
-                    <span class="block text-[10px] text-slate-500 mt-1">Accepts any raw VCF/TXT track</span>
+                    <span class="block text-[10px] text-slate-500 mt-1">Accepts raw VCF, VEP, or SnpEff tracks</span>
                     <div id="vcf-status" class="hidden mt-2.5 text-[10px] bg-emerald-500/10 border border-emerald-500/20 py-1 px-2 rounded font-mono text-emerald-400"></div>
                 </label>
             </div>
 
+            <!-- STEP 02: FAST MODE -->
             <div class="space-y-2">
                 <h2 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
                     <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-1.5 py-0.5 rounded text-[10px]">02</span> 
                     Optimization Mode
                 </h2>
                 <div class="flex items-center justify-between bg-slate-950/30 border border-slate-800/80 p-3.5 rounded-xl">
-                    <span class="text-xs text-slate-300 font-medium">Responsive Fast Mode <span class="text-[10px] text-slate-500 font-normal block">Prevents tab freeze (25k rows)</span></span>
+                    <span class="text-xs text-slate-300 font-medium">Responsive Fast Mode <span class="text-[10px] text-slate-500 font-normal block">Limits scan to top 25k records</span></span>
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" id="fast-mode" class="sr-only peer" checked>
                         <div class="w-8 h-4.5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-slate-400 after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-500 peer-checked:after:bg-white"></div>
@@ -47,6 +51,7 @@
                 </div>
             </div>
 
+            <!-- PARSE BUTTON -->
             <div class="pt-2">
                 <button id="load-btn" class="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-lg shadow-indigo-950/50 cursor-pointer tracking-wider uppercase">
                     ⚡ Parse Annotation Tracks
@@ -55,25 +60,44 @@
 
             <div class="h-px bg-slate-800/60 my-4"></div>
 
-            <div class="space-y-4">
+            <!-- FILTER CONTROLS -->
+            <div class="space-y-3">
                 <h2 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
                     <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
-                    Real-time Filtering
+                    Real-Time Filters
                 </h2>
                 <div>
                     <label class="block text-[9px] font-semibold text-slate-500 mb-1 font-mono uppercase tracking-wider">Gene Symbol</label>
-                    <input type="text" id="filter-gene" placeholder="Filter by gene (e.g. RPC10)" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2.5 rounded-lg text-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed placeholder:text-slate-600" disabled>
+                    <input type="text" id="filter-gene" placeholder="Filter by gene (e.g. TP53)" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2 rounded-lg text-slate-200 focus:border-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed placeholder:text-slate-600" disabled>
                 </div>
                 <div>
                     <label class="block text-[9px] font-semibold text-slate-500 mb-1 font-mono uppercase tracking-wider">Molecular Consequence</label>
-                    <input type="text" id="filter-consequence" placeholder="e.g. downstream_gene" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2.5 rounded-lg text-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed placeholder:text-slate-600" disabled>
+                    <input type="text" id="filter-consequence" placeholder="e.g. missense_variant" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2 rounded-lg text-slate-200 focus:border-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed placeholder:text-slate-600" disabled>
+                </div>
+                <div>
+                    <label class="block text-[9px] font-semibold text-slate-500 mb-1 font-mono uppercase tracking-wider">Impact Severity</label>
+                    <select id="filter-impact" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2 rounded-lg text-slate-200 focus:border-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+                        <option value="ALL">ALL IMPACT LEVELS</option>
+                        <option value="HIGH">HIGH</option>
+                        <option value="MODERATE">MODERATE</option>
+                        <option value="LOW">LOW</option>
+                        <option value="MODIFIER">MODIFIER</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[9px] font-semibold text-slate-500 mb-1 font-mono uppercase tracking-wider">Contig / Chromosome</label>
+                    <select id="filter-chrom" class="w-full bg-slate-950 border border-slate-800 text-xs px-3 py-2 rounded-lg text-slate-200 focus:border-indigo-500 outline-none transition font-mono disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+                        <option value="ALL">ALL CONTIGS</option>
+                    </select>
                 </div>
             </div>
         </div>
     </aside>
 
+    <!-- MAIN CONTENT VIEW -->
     <main class="flex-1 overflow-y-auto bg-slate-950 relative flex flex-col h-full">
         
+        <!-- WELCOME EMPTY STATE -->
         <div id="welcome-state" class="absolute inset-0 flex items-center justify-center p-8 z-10 transition-all duration-300">
             <div class="max-w-md w-full bg-slate-900/40 border border-slate-800/80 p-8 rounded-2xl shadow-2xl backdrop-blur-md text-center">
                 <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-4">
@@ -84,6 +108,7 @@
             </div>
         </div>
 
+        <!-- LOADING STATE -->
         <div id="loading-state" class="hidden absolute inset-0 flex items-center justify-center z-30 bg-slate-950/80 backdrop-blur-md transition-all duration-200">
             <div class="text-center">
                 <div class="relative w-12 h-12 mx-auto mb-4 flex items-center justify-center">
@@ -95,6 +120,7 @@
             </div>
         </div>
 
+        <!-- DASHBOARD VIEW -->
         <div id="dashboard-view" class="hidden p-8 space-y-6 max-w-7xl w-full mx-auto flex-1 overflow-y-auto">
             
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-900 pb-5 gap-4">
@@ -105,44 +131,61 @@
                     </h2>
                     <p class="text-xs text-slate-400 mt-0.5">Multiplexed client-side variant matrix rendering.</p>
                 </div>
-                <button id="reset-btn" class="text-[11px] bg-slate-900 border border-slate-800 hover:bg-slate-800 hover:text-white text-slate-300 px-3.5 py-1.5 rounded-lg font-mono font-medium transition active:scale-[0.98] cursor-pointer">
-                    Clear Workspace
-                </button>
+                <div class="flex items-center gap-2">
+                    <button id="export-csv-btn" class="text-[11px] bg-indigo-600/20 border border-indigo-500/30 hover:bg-indigo-600/30 text-indigo-300 px-3 py-1.5 rounded-lg font-mono font-medium transition cursor-pointer flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Export CSV
+                    </button>
+                    <button id="reset-btn" class="text-[11px] bg-slate-900 border border-slate-800 hover:bg-slate-800 hover:text-white text-slate-300 px-3.5 py-1.5 rounded-lg font-mono font-medium transition active:scale-[0.98] cursor-pointer">
+                        Clear Workspace
+                    </button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-slate-900/40 border border-slate-800/60 p-4.5 rounded-xl">
+            <!-- METRIC CARDS GRID -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl">
                     <span class="text-[9px] font-mono font-semibold text-slate-500 block uppercase tracking-wider">Total Coordinates</span>
                     <p id="metric-total" class="text-xl font-black mt-1 text-white tracking-tight">-</p>
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/60 p-4.5 rounded-xl">
-                    <span class="text-[9px] font-mono font-semibold text-slate-500 block uppercase tracking-wider">Single Nucleotide (SNVs)</span>
+                <div class="bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl">
+                    <span class="text-[9px] font-mono font-semibold text-slate-500 block uppercase tracking-wider">SNVs</span>
                     <p id="metric-snps" class="text-xl font-black mt-1 text-teal-400 tracking-tight">-</p>
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/60 p-4.5 rounded-xl border-l-2 border-l-rose-500/40">
-                    <span class="text-[9px] font-mono font-semibold text-rose-400 block uppercase tracking-wider">High Disruptive Impact</span>
+                <div class="bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl">
+                    <span class="text-[9px] font-mono font-semibold text-slate-500 block uppercase tracking-wider">Ti / Tv Ratio</span>
+                    <p id="metric-titv" class="text-xl font-black mt-1 text-indigo-400 tracking-tight">-</p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl border-l-2 border-l-rose-500/40">
+                    <span class="text-[9px] font-mono font-semibold text-rose-400 block uppercase tracking-wider">High Impact</span>
                     <p id="metric-high" class="text-xl font-black mt-1 text-rose-400 tracking-tight">-</p>
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/60 p-4.5 rounded-xl border-l-2 border-l-amber-500/40">
-                    <span class="text-[9px] font-mono font-semibold text-amber-500 block uppercase tracking-wider">Functional Gene Map</span>
+                <div class="bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl border-l-2 border-l-amber-500/40">
+                    <span class="text-[9px] font-mono font-semibold text-amber-500 block uppercase tracking-wider">Mapped Genes</span>
                     <p id="metric-mapped" class="text-xl font-black mt-1 text-amber-400 tracking-tight">-</p>
                 </div>
             </div>
 
+            <!-- CHARTS GRID -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-900/30 p-5 rounded-xl border border-slate-800/80 lg:col-span-2 flex flex-col">
-                    <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 font-mono">Mutational Densities Across Contigs</h3>
-                    <div class="h-60 relative w-full flex-1"><canvas id="chrChart"></canvas></div>
+                <div class="bg-slate-900/30 p-5 rounded-xl border border-slate-800/80 flex flex-col">
+                    <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 font-mono">Mutational Density / Contig</h3>
+                    <div class="h-52 relative w-full flex-1"><canvas id="chrChart"></canvas></div>
                 </div>
                 <div class="bg-slate-900/30 p-5 rounded-xl border border-slate-800/80 flex flex-col">
                     <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 font-mono">Ontology Impact Allocation</h3>
-                    <div class="h-60 relative w-full flex-1 flex items-center justify-center"><canvas id="impactChart"></canvas></div>
+                    <div class="h-52 relative w-full flex-1 flex items-center justify-center"><canvas id="impactChart"></canvas></div>
+                </div>
+                <div class="bg-slate-900/30 p-5 rounded-xl border border-slate-800/80 flex flex-col">
+                    <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-4 font-mono">Variant Classification</h3>
+                    <div class="h-52 relative w-full flex-1 flex items-center justify-center"><canvas id="typeChart"></canvas></div>
                 </div>
             </div>
 
+            <!-- VARIANT MATRIX TABLE -->
             <div class="bg-slate-900/30 rounded-xl border border-slate-800/80 overflow-hidden flex flex-col">
                 <div class="px-5 py-3.5 border-b border-slate-800 bg-slate-950/30 flex items-center justify-between">
-                    <h3 class="text-[11px] font-bold text-slate-300 uppercase font-mono tracking-wider">Variant Struct Arrays (Top 500 records)</h3>
+                    <h3 class="text-[11px] font-bold text-slate-300 uppercase font-mono tracking-wider">Variant Struct Arrays</h3>
                     <span class="text-[10px] text-slate-500 font-mono" id="table-counter"></span>
                 </div>
                 <div class="overflow-x-auto max-h-[450px]">
@@ -153,13 +196,13 @@
                                 <th class="p-3 font-semibold tracking-wider">POSITION</th>
                                 <th class="p-3 font-semibold tracking-wider">REF</th>
                                 <th class="p-3 font-semibold tracking-wider">ALT</th>
-                                <th class="p-3 font-semibold tracking-wider text-emerald-400">GENE SYMBOL</th>
-                                <th class="p-3 font-semibold tracking-wider text-amber-400">CONSEQUENCE ONTOLOGY</th>
-                                <th class="p-3 font-semibold tracking-wider text-center">IMPACT LEVEL</th>
+                                <th class="p-3 font-semibold tracking-wider">TYPE</th>
+                                <th class="p-3 font-semibold tracking-wider text-emerald-400">GENE</th>
+                                <th class="p-3 font-semibold tracking-wider text-amber-400">CONSEQUENCE</th>
+                                <th class="p-3 font-semibold tracking-wider text-center">IMPACT</th>
                             </tr>
                         </thead>
-                        <tbody id="variant-rows" class="divide-y divide-slate-900">
-                            </tbody>
+                        <tbody id="variant-rows" class="divide-y divide-slate-900"></tbody>
                     </table>
                 </div>
             </div>
@@ -167,248 +210,17 @@
         </div>
     </main>
 
-    <script>
-        let vcfFiles = [];
-        let masterVariants = [];
-        let activeCharts = {};
-        let detectedPipeline = "None Detected";
+    <!-- VARIANT DETAIL MODAL -->
+    <div id="variant-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl modal-enter space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="text-sm font-bold text-white font-mono" id="modal-title">Variant Details</h3>
+                <button id="close-modal" class="text-slate-400 hover:text-white text-lg font-bold">&times;</button>
+            </div>
+            <div id="modal-body" class="space-y-2 text-xs font-mono text-slate-300"></div>
+        </div>
+    </div>
 
-        const vcfInput = document.getElementById('vcf-files');
-        const loadBtn = document.getElementById('load-btn');
-        const filterGene = document.getElementById('filter-gene');
-        const filterConsequence = document.getElementById('filter-consequence');
-
-        vcfInput.addEventListener('change', (e) => {
-            vcfFiles = Array.from(e.target.files);
-            const statusEl = document.getElementById('vcf-status');
-            statusEl.classList.remove('hidden');
-            statusEl.innerText = `📦 ${vcfFiles.length} file(s) selected successfully.`;
-        });
-
-        document.getElementById('reset-btn').addEventListener('click', () => location.reload());
-
-        const applyFilters = () => {
-            const geneQuery = filterGene.value.toLowerCase().trim();
-            const consequenceQuery = filterConsequence.value.toLowerCase().trim();
-            
-            const filteredData = masterVariants.filter(variant => {
-                return variant.gene.toLowerCase().includes(geneQuery) && 
-                       variant.consequence.toLowerCase().includes(consequenceQuery);
-            });
-            renderTable(filteredData.slice(0, 500), filteredData.length);
-        };
-        
-        filterGene.addEventListener('input', applyFilters);
-        filterConsequence.addEventListener('input', applyFilters);
-
-        loadBtn.addEventListener('click', async () => {
-            if (vcfFiles.length === 0) { 
-                alert("Please select a file first."); 
-                return; 
-            }
-            
-            document.getElementById('welcome-state').classList.add('hidden');
-            document.getElementById('loading-state').classList.remove('hidden');
-            await new Promise(resolve => setTimeout(resolve, 100)); 
-
-            try {
-                const fastMode = document.getElementById('fast-mode').checked;
-                masterVariants = []; 
-                let pipelineScores = { CSQ: 0, ANN: 0 };
-                
-                let stats = { 
-                    total: 0, snp: 0, mapped: 0, high_impact: 0, chr: {}, 
-                    impact: { HIGH: 0, MODERATE: 0, LOW: 0, MODIFIER: 0 }
-                };
-
-                for (let file of vcfFiles) {
-                    const fileContent = await readFileContent(file);
-                    parseUniversalVCFStream(fileContent, stats, fastMode, pipelineScores);
-                }
-
-                if (pipelineScores.CSQ > 0 && pipelineScores.CSQ >= pipelineScores.ANN) {
-                    detectedPipeline = "Ensembl VEP (CSQ)";
-                } else if (pipelineScores.ANN > 0) {
-                    detectedPipeline = "SnpEff (ANN)";
-                } else {
-                    detectedPipeline = "Raw Native VCF";
-                }
-
-                renderDashboard(stats);
-            } catch (err) {
-                console.error(err);
-                alert("Failed to parse the file structure.");
-                document.getElementById('loading-state').classList.add('hidden');
-                document.getElementById('welcome-state').classList.remove('hidden');
-            }
-        });
-
-        function readFileContent(file) {
-            return new Promise((resolve, reject) => { 
-                const reader = new FileReader(); 
-                reader.onload = event => resolve(event.target.result); 
-                reader.onerror = error => reject(error); 
-                reader.readAsText(file); 
-            });
-        }
-
-        // FIXED: Stream scanner logic completely replaces split('\n') to protect browser memory profiles
-        function parseUniversalVCFStream(vcfText, stats, fastMode, pipelineScores) {
-            const loopLimit = fastMode ? 25000 : 1000000; 
-            let parsedLines = 0;
-            let currentPosition = 0;
-            let nextNewLineIndex = 0;
-
-            while ((nextNewLineIndex = vcfText.indexOf('\n', currentPosition)) !== -1 && parsedLines < loopLimit) {
-                const rawLine = vcfText.substring(currentPosition, nextNewLineIndex).trim();
-                currentPosition = nextNewLineIndex + 1;
-
-                if (!rawLine || rawLine.startsWith('#')) continue;
-
-                stats.total++;
-                parsedLines++;
-                
-                const columns = rawLine.split('\t');
-                if (columns.length < 8) continue;
-
-                const chrom = columns[0];
-                const pos = parseInt(columns[1]);
-                const ref = columns[3];
-                const alt = columns[4];
-                const infoField = columns[7];
-
-                if (ref.length === 1 && alt.length === 1) stats.snp++;
-                stats.chr[chrom] = (stats.chr[chrom] || 0) + 1;
-
-                let gene = "-";
-                let consequence = "-";
-                let impactLevel = "-";
-
-                if (infoField.includes('CSQ=')) {
-                    pipelineScores.CSQ++;
-                    const csqChunk = infoField.split('CSQ=')[1].split(';')[0];
-                    const topTranscript = csqChunk.split(',')[0]; 
-                    const fields = topTranscript.split('|');
-
-                    if (fields.length > 3) {
-                        consequence = fields[1] ? fields[1].replace(/_/g, ' ') : "unknown";
-                        impactLevel = fields[2] || "MODIFIER";
-                        gene = fields[3] || "-";
-                    }
-                } 
-                else if (infoField.includes('ANN=')) {
-                    pipelineScores.ANN++;
-                    const annChunk = infoField.split('ANN=')[1].split(';')[0];
-                    const topTranscript = annChunk.split(',')[0];
-                    const fields = topTranscript.split('|');
-
-                    if (fields.length > 3) {
-                        consequence = fields[1] ? fields[1].replace(/_/g, ' ') : "unknown";
-                        impactLevel = fields[2] || "MODIFIER";
-                        gene = fields[3] || "-";
-                    }
-                }
-
-                if (gene !== "-") stats.mapped++;
-                
-                const normalizedImpact = impactLevel.toUpperCase().trim();
-                if (stats.impact[normalizedImpact] !== undefined) {
-                    stats.impact[normalizedImpact]++;
-                    if (normalizedImpact === 'HIGH') stats.high_impact++;
-                } else if (infoField.includes('CSQ=') || infoField.includes('ANN=')) {
-                    stats.impact['MODIFIER']++;
-                }
-
-                masterVariants.push({ chrom, pos, ref, alt, gene, consequence, impactLevel: normalizedImpact || "UNKNOWN" });
-            }
-        }
-
-        function renderDashboard(stats) {
-            document.getElementById('metric-total').innerText = stats.total.toLocaleString();
-            document.getElementById('metric-snps').innerText = stats.snp.toLocaleString();
-            document.getElementById('metric-high').innerText = stats.high_impact.toLocaleString();
-            document.getElementById('metric-mapped').innerText = stats.mapped.toLocaleString();
-
-            const badge = document.getElementById('pipeline-badge');
-            badge.innerText = detectedPipeline;
-            if (detectedPipeline.includes('VEP')) {
-                badge.className = "text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded border border-indigo-500/30 text-indigo-400 bg-indigo-500/5";
-            } else if (detectedPipeline.includes('SnpEff')) {
-                badge.className = "text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded border border-teal-500/30 text-teal-400 bg-teal-500/5";
-            } else {
-                badge.className = "text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded border border-slate-700 text-slate-400 bg-slate-800";
-            }
-
-            filterGene.disabled = false;
-            filterConsequence.disabled = false;
-
-            if (activeCharts.chr) activeCharts.chr.destroy();
-            const sortedContigs = Object.entries(stats.chr).sort((a,b) => b[1] - a[1]);
-            activeCharts.chr = new Chart(document.getElementById('chrChart'), {
-                type: 'bar',
-                data: {
-                    labels: sortedContigs.map(item => item[0]),
-                    datasets: [{ data: sortedContigs.map(item => item[1]), backgroundColor: '#14b8a6', borderRadius: 4, barPercentage: 0.6 }]
-                },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { legend: { display: false } }, 
-                    scales: { 
-                        x: { grid: { display: false }, ticks: { color: '#64748b', font: { family: 'monospace', size: 10 } } }, 
-                        y: { grid: { color: '#1e293b' }, ticks: { color: '#64748b', font: { family: 'monospace', size: 10 } } } 
-                    } 
-                }
-            });
-
-            if (activeCharts.impact) activeCharts.impact.destroy();
-            activeCharts.impact = new Chart(document.getElementById('impactChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(stats.impact),
-                    datasets: [{ data: Object.values(stats.impact), backgroundColor: ['#f43f5e', '#f59e0b', '#3b82f6', '#475569'], borderWidth: 0 }]
-                },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    cutout: '80%', 
-                    plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'monospace', size: 10 }, boxWidth: 12 } } } 
-                }
-            });
-
-            renderTable(masterVariants.slice(0, 500), masterVariants.length);
-
-            document.getElementById('loading-state').classList.add('hidden');
-            document.getElementById('dashboard-view').classList.remove('hidden');
-        }
-
-        function renderTable(rows, totalFilteredCount) {
-            const tbody = document.getElementById('variant-rows');
-            document.getElementById('table-counter').innerText = `Showing up to 500 of ${totalFilteredCount.toLocaleString()} matching records`;
-            
-            if (rows.length === 0) { 
-                tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-600 italic border-none bg-slate-950/20">No matching variant annotations found.</td></tr>`; 
-                return; 
-            }
-            
-            tbody.innerHTML = rows.map(v => {
-                let badgeStyle = 'text-slate-400 bg-slate-800/60 border border-slate-700/50';
-                if (v.impactLevel === 'HIGH') badgeStyle = 'text-rose-400 bg-rose-500/10 border border-rose-500/20';
-                else if (v.impactLevel === 'MODERATE') badgeStyle = 'text-amber-400 bg-amber-500/10 border border-amber-500/20';
-                else if (v.impactLevel === 'LOW') badgeStyle = 'text-blue-400 bg-blue-500/10 border border-blue-500/20';
-
-                return `
-                <tr class="hover:bg-slate-900/60 transition-colors duration-150">
-                    <td class="p-3 text-slate-400 font-semibold">${v.chrom}</td>
-                    <td class="p-3 text-slate-300 font-medium">${v.pos.toLocaleString()}</td>
-                    <td class="p-3 text-teal-400 font-bold">${v.ref}</td>
-                    <td class="p-3 text-indigo-400 font-bold">${v.alt}</td>
-                    <td class="p-3 text-slate-200 font-bold tracking-wide">${v.gene}</td>
-                    <td class="p-3 text-slate-400 lowercase truncate max-w-xs">${v.consequence}</td>
-                    <td class="p-3 text-center"><span class="inline-block px-2 py-0.5 rounded text-[9px] font-bold tracking-wider ${badgeStyle}">${v.impactLevel}</span></td>
-                </tr>
-            `}).join('');
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
